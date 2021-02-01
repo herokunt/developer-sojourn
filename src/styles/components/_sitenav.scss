@@ -1,0 +1,26 @@
+.site-nav {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    padding: .5rem 1rem;
+    margin: 0 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .site-nav__link {
+      transform: scale(1.25) rotate(10deg);
+      color: $color-darker;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $color-light;
+    font-family: PanameraRegular;
+    text-shadow: $text-shadow;
+    transition: transform 0.2s ease;
+  }
+}

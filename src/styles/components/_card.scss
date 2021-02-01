@@ -1,0 +1,248 @@
+.card {
+  position: relative;
+  perspective: 150rem;
+
+  @include responsive(tablet) {
+    height: 20rem;
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius;
+
+    &--fill {
+      object-fit: fill;
+    }
+
+    @include responsive(tablet) {
+      object-fit: cover;
+    }
+  }
+
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    backface-visibility: hidden;
+    transition: transform 0.75s ease;
+
+    @include responsive(tablet) {
+      box-shadow: $box-shadow-light;
+    }
+
+    &--front-y {
+      background-color: $color-light;
+    }
+    &--back-y {
+      background-color: $color-darker;
+      color: $color-light;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      @include responsive(tablet) {
+        background-color: rgba($color-darker, .9);
+        transform: rotateY(0);
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 4rem;
+      }
+    }
+    &--front-x {
+      background-color: $color-light;
+    }
+    &--back-x {
+      background-color: $color-darker;
+      color: $color-light;
+      transform: rotateX(180deg);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      @include responsive(tablet) {
+        background-color: rgba($color-darker, .9);
+        transform: rotateX(0);
+        justify-content: space-between;
+        padding: 0 4rem;
+      }
+    }
+  }
+
+  &:hover &__side--front-y {
+    transform: rotateY(-180deg);
+
+    @include responsive(tablet){
+      transform: rotateY(0);
+    }
+  }
+
+  &:hover &__side--back-y {
+    transform: rotateY(0);
+
+    @include responsive(tablet){
+      transform: rotateY(0);
+    }
+  }
+
+  &:hover &__side--front-x {
+    transform: rotateX(-180deg);
+
+    @include responsive(tablet){
+      transform: rotateX(0);
+    }
+  }
+
+  &:hover &__side--back-x {
+    transform: rotateX(0);
+
+    @include responsive(tablet){
+      transform: rotateX(0);
+    }
+  }
+
+  &--1 { // flowfield
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    @include responsive(portrait) {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  &--2 { // raycast
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+
+    @include responsive(portrait) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  &--3 { // steering
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+
+    @include responsive(portrait) {
+      grid-column: 2 / 4;
+      grid-row: 3 / 4;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  &--4 { // tetris
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+
+    @include responsive(portrait) {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  &--5 { // snake
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    @include responsive(portrait) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  &--6 { // maze
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    @include responsive(portrait) {
+      grid-column: 3 / 4;
+      grid-row: 4 / 5;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  &--7 { // matter.js
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+
+    @include responsive(portrait) {
+      grid-column: 1 / 3;
+      grid-row: 4 / 5;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
+  /* BACK OF THE CARD */
+
+  &__title {
+    &::selection {
+      background-color: turquoise;
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    width: 6rem;
+
+    @include responsive(tablet) {
+      width: 10rem;
+    }
+  }
+
+  &__gh,
+  &__p5 {
+    transition: fill .2s;
+    fill: $color-light;
+  }
+
+  &__gh {
+    &:hover {
+      fill: $color-gray-light;
+    }
+  }
+
+  &__p5 {
+    &:hover {
+      fill: $color-p5;
+    }
+  }
+}

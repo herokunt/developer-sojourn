@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // desktop-first
+
+  @include responsive(portrait)  { font-size: 56.25%; }
+  @include responsive(phone)     { font-size: 50%;    }
+  @include responsive(widescreen) { font-size: 75%;    }
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $color-dark;
+  background-image: $background-gradient;
+  background-size: 900%;
+  background-position: left;
+  transition: background-position 9s;
+  animation: animate-background 45s 9s infinite alternate;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h6, h5, h4, h3, h2, h1, a, p {
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}

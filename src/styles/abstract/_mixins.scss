@@ -1,0 +1,66 @@
+/*
+ *  MEDIA QUERY REFERENCE
+ *  | Breakpoint     | Pixels |  Em   |
+ *  |----------------|--------|-------|
+ *  | Narrow         | < 400  | 25    |
+ *  | Phone          | < 600  | 37.5  |
+ *  | tablet         | < 768  | 48    |
+ *  | Portrait       | < 900  | 56.25 |
+ *  | Landscape      | < 1200 | 75    |
+ *  | Desktop        | < 1800 | 112.5 |
+ *  | Big Desktop    | > 1800 | 112.5 |
+**/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == narrow     { @media (max-width: 25em)    { @content }; }
+  @if $breakpoint == phone      { @media (max-width: 37.5em)  { @content }; }
+  @if $breakpoint == tablet     { @media (max-width: 48em)    { @content }; }
+  @if $breakpoint == portrait   { @media (max-width: 56.25em) { @content }; }
+  @if $breakpoint == landscape  { @media (max-width: 75em)    { @content }; }
+  @if $breakpoint == widescreen { @media (min-width: 112.5em) { @content }; }
+}
+
+@mixin contain {
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @include responsive(landscape) {
+    max-width: 95rem;
+  }
+  @include responsive(portrait) {
+    max-width: 75rem;
+  }
+  @include responsive(tablet) {
+    max-width: 60rem;
+  }
+  @include responsive(phone) {
+    max-width: 50rem;
+  }
+  @include responsive(narrow) {
+    max-width: 40rem;
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+
+@mixin has-background($color) {
+  color: transparent;
+  background-clip: text;
+  background-color: $color;
+}
+
+@mixin glass-effect {
+  background-image: linear-gradient(
+    to right top,
+    rgba(241,241,241,.3),
+    rgba(255,255,255,.2)
+  );
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  box-shadow: 1rem 1rem 4rem rgba($color-darker, .15);
+}

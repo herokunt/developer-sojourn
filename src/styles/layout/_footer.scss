@@ -1,0 +1,36 @@
+.footer {
+  background-color: $color-dark;
+  color: $color-light;
+  padding: 5rem 0;
+
+  &__heading {
+    @include contain;
+  }
+
+  &__logo-container {
+    display: inline-block;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    backface-visibility: hidden;
+
+    &:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    &--p5 {
+      &:hover {
+        color: $color-p5;
+      }
+    }
+  }
+}

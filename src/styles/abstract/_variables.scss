@@ -1,0 +1,41 @@
+/* COLORS */
+
+$color-info: #3F5EFB;
+$color-warning: yellow;
+$color-danger: coral;
+$color-success: green;
+$color-p5: #ED225D;
+
+
+$color-light: #F1F1F1;
+$color-dark: #333;
+$color-darker: #212121;
+
+$color-gray: #95a5a6;
+$color-gray-light: #bdc3c7;
+$color-gray-dark: #7f8c8d;
+
+$background-gradient: linear-gradient(
+  120deg,
+  #95d7f1,
+  #89caf0,
+  #83bcee,
+  #7bb2f1,
+  #79a8f2,
+  #7c9cf2,
+  #7b92f9,
+  #8086fd,
+  #8a78ff
+);
+
+/* LAYOUT */
+
+$max-width: 100rem;
+$border-radius: 3px;
+$column-gap: 2rem;
+
+/* EFFECTS */
+
+$box-shadow: 1rem 2rem 2rem rgba($color-darker, 0.3);
+$box-shadow-light: .25rem 1rem 2rem rgba($color-darker, 0.2);
+$text-shadow: 1rem 1rem 1.25rem rgba($color-darker, .2);

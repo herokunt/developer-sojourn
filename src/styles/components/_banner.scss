@@ -1,0 +1,13 @@
+.banner {
+  @include contain;
+  border: 2px solid $color-darker;
+  border-radius: $border-radius;
+  padding: 2rem;
+  text-align: center;
+
+  &--warning {
+    background-color: lighten(#e1bc2c, 30%);
+    color: #e1bc2c;
+    border: 2px solid #e1bc2c;
+  }
+}

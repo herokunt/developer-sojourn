@@ -1,0 +1,11 @@
+.small-margin-y {
+  margin: 2rem 0;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.hide-on-phone {
+  @include responsive(phone) {
+    display: none;
+  }
+}

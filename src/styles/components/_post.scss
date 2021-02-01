@@ -1,0 +1,9 @@
+.post {
+  @include contain;
+  padding: 3rem;
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}

@@ -1,0 +1,41 @@
+.button {
+  position: relative;
+  padding: 1rem 2.5rem;
+  margin: 0 2rem;
+  background-color: $color-light;
+  border: none;
+  border-radius: $border-radius;
+  transition: all .2s;
+  color: inherit;
+  font-size: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+
+    &::after {
+      opacity: .8;
+    }
+  }
+
+  &:active {
+    transform: translateY(3px);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    box-shadow: $box-shadow-light;
+    transition: opacity .2s;
+    opacity: 0.5;
+  }
+}
