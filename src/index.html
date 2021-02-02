@@ -15,19 +15,27 @@
         <h2 class="header__headline--subtitle">Take a break, have a look around</h2>
       </header>
 
-      <nav class="site-nav">
-        <li class="site-nav__item"><a class="site-nav__link" href="#section-about">About</a></li>
-        <li class="site-nav__item"><a class="site-nav__link" href="#section-projects">Projects</a></li>
-        <li class="site-nav__item"><a class="site-nav__link" href="#section-notes">Blog</a></li>
-      </nav>
+      <nav class="header__navigation">
+        <ul class="header__menu">
+          <li class="header__item"><a class="header__link" href="#section-about">About</a></li>
+          <li class="header__item"><a class="header__link" href="#section-projects">Projects</a></li>
+          <li class="header__item"><a class="header__link" href="#section-notes">Blog</a></li>
 
-      <ul class="header__navigation">
-        <li><button class="button header__button" id="circles">Circles</button></li>
-        <li><button class="button header__button" id="snowfall">SnowFall</button></li>
-        <li><button class="button header__button" id="blobby">Blobby</button></li>
-        <li><button class="button header__button" id="matrix">Matrix</button></li>
-        <li><button class="button header__button" id="flowfield">Flowfield</button></li>
-      </ul>
+          <li class="header__item dropdown">
+            <a class="header__link" href="#section-notes">Select
+              <span class="dropdown__arrow">&blacktriangle;</span>
+            </a>
+            <nav class="dropdown__content">
+              <ul class="dropdown__menu">
+                <li class="dropdown__item"><button class="dropdown__btn dropdown__btn--paused" id="circles">Circles</button></li>
+                <li class="dropdown__item"><button class="dropdown__btn" id="snowfall">SnowFall</button></li>
+                <li class="dropdown__item"><button class="dropdown__btn" id="blobby">Blobby</button></li>
+                <li class="dropdown__item"><button class="dropdown__btn" id="matrix">Matrix</button></li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <svg class="header__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 115" preserveAspectRatio="none">

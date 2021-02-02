@@ -27,6 +27,10 @@ body {
   animation: animate-background 45s 9s infinite alternate;
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+  @media (prefers-color-scheme: dark) {
+    color: $color-light;
+  }
 }
 
 h6, h5, h4, h3, h2, h1, a, p {

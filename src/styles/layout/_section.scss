@@ -3,9 +3,13 @@
   width: 100%;
   min-height: 100vh;
   padding: 10rem 0;
+  background-color: $color-light;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $color-dark;
+  }
 
   &-about {
-    background-color: $color-light;
     overflow-x: clip;
 
     &__content {
@@ -30,6 +34,10 @@
       transform: rotate(180deg);
       fill: $color-light;
       z-index: 1;
+
+      @media (prefers-color-scheme: dark) {
+        fill: $color-dark;
+      }
     }
   }
 
@@ -49,10 +57,12 @@
       transform: rotateX(180deg);
       fill: $color-light;
       z-index: -1;
+
+      @media (prefers-color-scheme: dark) {
+        fill: $color-dark;
+      }
     }
   }
 
-  &-notes {
-    background-color: $color-light;
-  }
+  &-notes {}
 }

@@ -12,6 +12,10 @@
     color: $color-light;
     text-shadow: $text-shadow;
     font-family: PanameraRegular;
+
+    @media (prefers-color-scheme: dark) {
+      color: $color-dark;
+    }
   }
 
   &--title {

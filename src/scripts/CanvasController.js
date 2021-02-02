@@ -20,10 +20,36 @@ class CanvasController {
   };
 
   events() {
-    document.querySelector('.header__navigation').addEventListener('click', e => {
-      if (e.target.id.match(/(circles|matrix|blobby|snowfall|flowfield)/i)) {
-        this.changeSketch(e.target.id);
+    const menu = document.querySelector('.dropdown__menu');
+    this.effects = menu.querySelectorAll('.dropdown__btn');
+
+    menu.addEventListener('click', e => {
+      const btn = e.target;
+
+      if (!btn.id.match(/(circles|matrix|blobby|snowfall|flowfield)/i)) {
+        return;
       }
+
+      if (btn.className.includes('active')) {
+        btn.className = btn.className.replace('active', 'paused');
+        this.current.stopLoop();
+        return;
+      }
+
+      if (btn.className.includes('paused')) {
+        btn.className = btn.className.replace('paused', 'active');
+        this.current.resumeLoop();
+        return;
+      }
+
+      // At this point is clear a new button was selected, reset classes
+      this.effects.forEach(btn => btn.className = 'dropdown__btn');
+
+      // Add new active class to clicked button
+      btn.classList.add('.dropdown__btn--active');
+
+      // Update sketch
+      this.changeSketch(e.target.id);
     });
   }
 

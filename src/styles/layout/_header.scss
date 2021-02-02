@@ -28,21 +28,35 @@
     }
   }
 
-  &__navigation {
+  &__navigation {}
+
+  &__menu {
     display: flex;
     justify-content: center;
+  }
 
-    @include responsive(phone) {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-      gap: 1rem;
+  &__item {
+    padding: .5rem 1rem;
+    margin: 0 2rem;
+
+    &:hover {
+      cursor: pointer;
     }
 
-    button {
-      @include responsive(phone) {
-        width: 100%;
-        margin: 0;
-      }
+    &:hover .header__link {
+      color: $color-dark;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $color-light;
+    font-family: PanameraRegular;
+    text-shadow: $text-shadow;
+    transition: color 0.1s ease;
+
+    &--menu {
+
     }
   }
 
@@ -70,5 +84,9 @@
     width: 100%;
     transform: rotate(180deg);
     fill: $color-light;
+
+    @media (prefers-color-scheme: dark) {
+      fill: $color-dark;
+    }
   }
 }

@@ -1,0 +1,88 @@
+.dropdown {
+  position: relative;
+
+  @include responsive(tablet) {
+    position: static;
+  }
+
+  &:hover &__content {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:hover &__arrow {
+    transform: rotate(180deg) translateY(-5px);
+  }
+
+  &__arrow {
+    display: inline-block;
+    transform: rotate(90deg) translate(2px, -2px);
+    transition: transform 0.2s;
+  }
+
+  &__content {
+    @include glass-effect;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    border-radius: $border-radius;
+    transition: opacity 0.2s;
+    // border: 2px solid $color-dark;
+    cursor: default;
+    padding: 0.5rem;
+
+    @include responsive(tablet) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      left: 100%;
+    }
+  }
+
+  &__menu {
+    padding: 1rem;
+  }
+
+  &__item {
+    margin: 0.5rem 0;
+    padding: 0 .5rem;
+  }
+
+  &__btn {
+    font-size: 1.6rem;
+    font-family: PanameraRegular;
+    color: $color-dark;
+    background: none;
+    border: none;
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-light;
+    }
+
+    &--active {
+      color: $color-light;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        color: inherit;
+      }
+    }
+
+    &--paused {
+      color: $color-light;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        color: inherit;
+      }
+    }
+  }
+}
