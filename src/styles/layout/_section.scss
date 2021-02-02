@@ -3,7 +3,6 @@
   width: 100%;
   min-height: 100vh;
   padding: 10rem 0;
-  background-color: $color-light;
 
   @media (prefers-color-scheme: dark) {
     background-color: $color-dark;
@@ -11,6 +10,11 @@
 
   &-about {
     overflow-x: clip;
+    background-color: $color-light;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-dark;
+    }
 
     &__content {
       @include contain;
@@ -36,7 +40,7 @@
       z-index: 1;
 
       @media (prefers-color-scheme: dark) {
-        fill: $color-dark;
+        display: none;
       }
     }
   }
@@ -59,10 +63,16 @@
       z-index: -1;
 
       @media (prefers-color-scheme: dark) {
-        fill: $color-dark;
+        display: none;
       }
     }
   }
 
-  &-notes {}
+  &-notes {
+    background-color: $color-light;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-dark;
+    }
+  }
 }

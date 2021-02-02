@@ -60,13 +60,27 @@
     border: none;
     display: inline-block;
 
+    @media (prefers-color-scheme: dark) {
+      color: $color-light;
+    }
+
     &:hover {
       cursor: pointer;
       color: $color-light;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: $color-light;
+        color: $color-dark;
+      }
     }
 
     &--active {
       color: $color-light;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: $color-light;
+        color: $color-dark;
+      }
 
       &:after {
         content: '';
