@@ -1,23 +1,23 @@
 /*
- *  MEDIA QUERY REFERENCE
- *  | Breakpoint     | Pixels |  Em   |
- *  |----------------|--------|-------|
- *  | Narrow         | < 400  | 25    |
- *  | Phone          | < 600  | 37.5  |
- *  | tablet         | < 768  | 48    |
- *  | Portrait       | < 900  | 56.25 |
- *  | Landscape      | < 1200 | 75    |
- *  | Desktop        | < 1800 | 112.5 |
- *  | Big Desktop    | > 1800 | 112.5 |
+*  MEDIA QUERY REFERENCE
+*  | Breakpoint     | Pixels |  Em   |
+*  |----------------|--------|-------|
+*  | Narrow         | < 400  | 25    |
+*  | Phone          | < 600  | 37.5  |
+*  | tablet         | < 768  | 48    |
+*  | Portrait       | < 900  | 56.25 |
+*  | Landscape      | < 1200 | 75    |
+*  | Desktop        | < 1800 | 112.5 |
+*  | Big Desktop    | > 1800 | 112.5 |
 **/
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == narrow     { @media (max-width: 25em)    { @content }; }
-  @if $breakpoint == phone      { @media (max-width: 37.5em)  { @content }; }
-  @if $breakpoint == tablet     { @media (max-width: 48em)    { @content }; }
-  @if $breakpoint == portrait   { @media (max-width: 56.25em) { @content }; }
-  @if $breakpoint == landscape  { @media (max-width: 75em)    { @content }; }
-  @if $breakpoint == widescreen { @media (min-width: 112.5em) { @content }; }
+  @if $breakpoint == narrow     { @media only screen and (max-width: 25em)    { @content }; }
+  @if $breakpoint == phone      { @media only screen and (max-width: 37.5em)  { @content }; }
+  @if $breakpoint == tablet     { @media only screen and (max-width: 48em)    { @content }; }
+  @if $breakpoint == portrait   { @media only screen and (max-width: 56.25em) { @content }; }
+  @if $breakpoint == landscape  { @media only screen and (max-width: 75em)    { @content }; }
+  @if $breakpoint == widescreen { @media only screen and (min-width: 112.5em) { @content }; }
 }
 
 @mixin contain {
@@ -56,9 +56,9 @@
 
 @mixin glass-effect {
   background-image: linear-gradient(
-    to right top,
-    rgba(241,241,241,.3),
-    rgba(255,255,255,.2)
+  to right top,
+  rgba(241,241,241,.3),
+  rgba(255,255,255,.2)
   );
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
@@ -66,9 +66,9 @@
 
   @media (prefers-color-scheme: dark) {
     background-image: linear-gradient(
-      to right top,
-      rgba(0,0,0,.3),
-      rgba(0,0,0,.2)
+    to right top,
+    rgba(0,0,0,.3),
+    rgba(0,0,0,.2)
     );
   }
 }

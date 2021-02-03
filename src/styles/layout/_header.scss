@@ -18,17 +18,22 @@
   }
 
   &__headline {
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 100%;
-      height: 1px;
-      background: $color-light;
-      margin: 2rem 0;
-    }
+    // &::after {
+    //   content: '';
+    //   display: inline-block;
+    //   width: 100%;
+    //   height: 1px;
+    //   background: $color-light;
+    //   margin: 2rem 0;
+    // }
+    margin: 2rem 0;
   }
 
-  &__navigation {}
+  &__navigation {
+    // border: 1px solid $color-light;
+    // padding: 1.5rem;
+    // @include glass-effect;
+  }
 
   &__menu {
     display: flex;

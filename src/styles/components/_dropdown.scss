@@ -1,8 +1,8 @@
 .dropdown {
   position: relative;
 
-  @include responsive(tablet) {
-    position: static;
+  @media only screen and (hover: none){
+    display: none;
   }
 
   &:hover &__content {
@@ -36,10 +36,8 @@
     padding: 0.5rem;
 
     @include responsive(tablet) {
-      top: 0;
+      top: 3rem;
       left: 0;
-      width: 100%;
-      left: 100%;
     }
   }
 
@@ -74,28 +72,13 @@
       }
     }
 
-    &--active {
+    &--active,
+    &--paused {
       color: $color-light;
 
       @media (prefers-color-scheme: dark) {
         background-color: $color-light;
         color: $color-dark;
-      }
-
-      &:after {
-        content: '';
-        display: inline-block;
-        color: inherit;
-      }
-    }
-
-    &--paused {
-      color: $color-light;
-
-      &:after {
-        content: '';
-        display: inline-block;
-        color: inherit;
       }
     }
   }

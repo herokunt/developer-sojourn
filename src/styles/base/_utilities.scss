@@ -9,20 +9,6 @@
     display: none;
   }
 }
-.has-items {
-  position: relative;
-
-  &:hover > * {
-    height: 100%;
-    opacity: 1;
-  }
-
-  & > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
+.fullwidth {
+  flex: 1 0 0;
 }

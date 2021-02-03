@@ -16,48 +16,60 @@ class CanvasController {
   constructor(sketch) {
     this.current  = new p5(sketch, CANVAS_ELEMENT);
     this.observer = this.createObserver();
-    this.events();
+    this.listen();
   };
 
-  events() {
+  listen() {
     const menu = document.querySelector('.dropdown__menu');
     this.effects = menu.querySelectorAll('.dropdown__btn');
 
-    menu.addEventListener('click', e => {
-      const btn = e.target;
+    menu.addEventListener('click', ({ target }) => {
 
-      if (!btn.id.match(/(circles|matrix|blobby|snowfall|flowfield)/i)) {
-        return;
-      }
+      if (!SKETCH_LIST.hasOwnProperty(target.id)) return;
 
-      if (btn.className.includes('active')) {
-        btn.className = btn.className.replace('active', 'paused');
+      if (target.className.includes('active')) {
+        target.className = target.className.replace('active', 'paused');
         this.current.stopLoop();
         return;
       }
 
-      if (btn.className.includes('paused')) {
-        btn.className = btn.className.replace('paused', 'active');
+      if (target.className.includes('paused')) {
+        target.className = target.className.replace('paused', 'active');
         this.current.resumeLoop();
         return;
       }
 
-      // At this point is clear a new button was selected, reset classes
+      // At this point is clear a new effect was selected, reset classes
       this.effects.forEach(btn => btn.className = 'dropdown__btn');
 
       // Add new active class to clicked button
-      btn.classList.add('.dropdown__btn--active');
+      target.classList.add('dropdown__btn--active');
 
       // Update sketch
-      this.changeSketch(e.target.id);
+      this.changeSketch(target.id);
     });
   }
 
   changeSketch(sketch) {
     this.current = this.current.destroy();
-    setTimeout(() => {
-      this.current = new p5(SKETCH_LIST[sketch], CANVAS_ELEMENT);
-    }, 250);
+
+    this._changeSketch(sketch)
+      .then(instance => this.current = instance)
+      .catch(console.error);
+    // setTimeout(() => {
+    //   this.current = new p5(SKETCH_LIST[sketch], CANVAS_ELEMENT);
+    // }, 250);
+  }
+
+  _changeSketch(sketch) {
+    return new Promise((resolve, reject) => {
+      const instance = new p5(SKETCH_LIST[sketch], CANVAS_ELEMENT);
+      if (instance) {
+        resolve(instance);
+      } else {
+        reject('Error during creation of the instance');
+      }
+    });
   }
 
   createObserver() {
