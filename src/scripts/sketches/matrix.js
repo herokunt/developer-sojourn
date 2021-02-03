@@ -2,7 +2,7 @@ import p5 from 'p5';
 
 const CHAR_SIZE = 40;
 const CHAR_COLOR = 'rgba(241,241,241,0.25)';
-const FRAME_RATE = 25;
+const FRAME_RATE = 20;
 
 class MatrixSymbol {
   constructor(p, x, y, speed, col) {
@@ -46,7 +46,7 @@ class Column {
     this.y = y;
     this.symbols = [];
     this.totalSymbols = Math.round(Math.random() * 20 + 10);
-    this.speed = Math.random() * 4;
+    this.speed = Math.random() * 3;
     this.setup();
   }
 

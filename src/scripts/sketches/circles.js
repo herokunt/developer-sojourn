@@ -22,8 +22,8 @@ class Circle {
 
 export default p => {
 
-  const totalCircles = 1000;
-  const totalTries = 100;
+  const totalCircles = 800;
+  const totalTries = 80;
   let circles = [];
   let canvasDOM;
   let timer;
@@ -40,7 +40,7 @@ export default p => {
       }
 
       if (tries < totalTries) {
-        circles.push(newCircle);
+        circles[i] = (newCircle);
       }
     }
   };

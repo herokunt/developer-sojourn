@@ -10,8 +10,8 @@
     pointer-events: auto;
   }
 
-  &:hover &__arrow {
-    transform: rotate(180deg) translateY(-5px);
+  &:hover &__icon {
+    transform: rotate(45deg);
   }
 
   &__arrow {
@@ -50,35 +50,47 @@
     padding: 0 .5rem;
   }
 
+  &__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: $color-light;
+    transition: transform 0.2s;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &__btn {
     font-size: 1.6rem;
     font-family: PanameraRegular;
-    color: $color-dark;
+    color: $color-light;
     background: none;
     border: none;
     display: inline-block;
 
     @media (prefers-color-scheme: dark) {
-      color: $color-light;
+      color: $color-dark;
     }
 
     &:hover {
       cursor: pointer;
-      color: $color-light;
+      color: $color-dark;
 
       @media (prefers-color-scheme: dark) {
-        background-color: $color-light;
-        color: $color-dark;
+        // background-color: $color-dark;
+        color: $color-light;
       }
     }
 
     &--active,
     &--paused {
-      color: $color-light;
+      color: $color-dark;
+      position: relative;
 
       @media (prefers-color-scheme: dark) {
-        background-color: $color-light;
-        color: $color-dark;
+        // background-color: $color-dark;
+        color: $color-light;
       }
     }
   }

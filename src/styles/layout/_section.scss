@@ -20,7 +20,7 @@
       @include contain;
     }
 
-    &__remarks {
+    &__footer {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -37,10 +37,57 @@
         width: 3.2rem;
         height: 3.2rem;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         @include responsive(phone) {
           width: 4rem;
           height: 4rem;
         }
+      }
+    }
+
+    &__contact {
+      display: flex;
+      justify-content: flex-start;
+
+      .icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-right: 2rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @include responsive(phone) {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+
+    .tooltip {
+      position: relative;
+
+      &:hover::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      &::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 110%;
+        left: 0;
+        padding: .5rem;
+        border-radius: $border-radius;
+        background-color: $color-dark;
+        color: $color-light;
+        transform: scale(0);
+        opacity: 0;
+        transition: transform 0.2s opacity 0.3s;
       }
     }
 

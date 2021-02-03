@@ -49,7 +49,7 @@ class Particle {
 
 export default p => {
 
-  const PARTICLES = 300;
+  const PARTICLES = 600;
   const FRAME_RATE = 30;
   let snow, gravity, wind, windOffset, angle, xoff, yoff, force;
   let canvasDOM;

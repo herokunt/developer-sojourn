@@ -4,6 +4,7 @@ const NUMBER_OF_BLOBS = 5;
 const BLOB_COLOR = 'RGBA(241, 241, 241, 0.5)';
 const BLOB_XOFF = 0.1;
 const BLOB_YOFF = 0.01;
+const FRAME_RATE = 18;
 
 class Blobby {
   constructor(p, x, y, r) {
@@ -87,7 +88,7 @@ export default p => {
     canvasDOM = canvas.parent();
     p.resizeCanvas(canvasDOM.scrollWidth, canvasDOM.scrollHeight);
 
-    p.frameRate(18);
+    p.frameRate(FRAME_RATE);
 
     p.fill(BLOB_COLOR);
     p.noStroke();
