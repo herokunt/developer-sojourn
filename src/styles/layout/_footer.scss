@@ -3,6 +3,11 @@
   color: $color-light;
   padding: 5rem 0;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: $color-darker;
+    border-top: 1px dashed $color-light;
+  }
+
   &__heading {
     @include contain;
   }

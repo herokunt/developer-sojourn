@@ -6,6 +6,7 @@
 
   @media (prefers-color-scheme: dark) {
     background-color: $color-dark;
+    padding: 5rem 0;
   }
 
   &-about {
@@ -33,29 +34,19 @@
       grid-gap: 1rem;
       grid-template-columns: repeat(auto-fit, 3.2rem);
 
-      .icon {
-        width: 3.2rem;
-        height: 3.2rem;
+      &--contact {
+        justify-content: center;
+        gap: 3rem;
 
-        &:hover {
-          cursor: pointer;
-        }
-
-        @include responsive(phone) {
-          width: 4rem;
-          height: 4rem;
+        @include responsive(tablet) {
+          justify-content: space-around;
+          gap: unset;
         }
       }
-    }
-
-    &__contact {
-      display: flex;
-      justify-content: flex-start;
 
       .icon {
         width: 3.2rem;
         height: 3.2rem;
-        margin-right: 2rem;
 
         &:hover {
           cursor: pointer;
@@ -64,6 +55,14 @@
         @include responsive(phone) {
           width: 4rem;
           height: 4rem;
+        }
+
+        &--dark-mode {
+          fill: $color-darker !important;
+
+          @media (prefers-color-scheme: dark) {
+            fill: $color-light !important;
+          }
         }
       }
     }
@@ -88,6 +87,24 @@
         transform: scale(0);
         opacity: 0;
         transition: transform 0.2s opacity 0.3s;
+      }
+
+      &--right {
+        position: relative;
+
+        &::before {
+          content: attr(data-tooltip);
+          position: absolute;
+          top: 110%;
+          left: -100%;
+          padding: .5rem;
+          border-radius: $border-radius;
+          background-color: $color-dark;
+          color: $color-light;
+          transform: scale(0);
+          opacity: 0;
+          transition: transform 0.2s opacity 0.3s;
+        }
       }
     }
 

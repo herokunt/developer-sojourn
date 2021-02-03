@@ -54,6 +54,10 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 0 4rem;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: rgba($color-darker, .65);
+        }
       }
     }
     &--front-x {
@@ -72,6 +76,10 @@
         transform: rotateX(0);
         justify-content: space-between;
         padding: 0 4rem;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: rgba($color-darker, .65);
+        }
       }
     }
   }
