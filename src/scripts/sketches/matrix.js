@@ -2,7 +2,7 @@ import p5 from 'p5';
 
 const CHAR_SIZE = 40;
 const CHAR_COLOR = 'rgba(241,241,241,0.25)';
-const FRAME_RATE = 20;
+const FRAME_RATE = 25;
 
 class MatrixSymbol {
   constructor(p, x, y, speed, col) {

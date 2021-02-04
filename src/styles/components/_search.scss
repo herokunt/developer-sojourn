@@ -1,0 +1,144 @@
+.control-group {
+  margin: 2rem 0 3rem 0;
+
+  &[open] .filters {
+    padding: 2rem;
+  }
+}
+
+.filters {
+  font-family: PanameraRegular;
+  position: relative;
+  display: flex;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::marker {
+    content: '';
+  }
+
+  &::after {
+    content: url(../assets/images/funnel.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.search {
+  @include contain;
+
+  &__input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    border: 2px solid transparent;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-light;
+    color: $color-dark;
+
+    &:target,
+    &:focus,
+    &:hover,
+    &:active {
+      border: 2px solid $color-dark;
+    }
+  }
+
+  &__filter {
+    display: none;
+
+    &:checked + .search__label::after {
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    margin: 0 3rem;
+    position: relative;
+    font-family: PanameraRegular;
+    // font-weight: 300;
+
+    @include responsive(tablet) {
+      margin: 0 1rem 2rem 0;
+      font-size: 1.4rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      top: 0;
+      left: 110%;
+      border: 1px solid $color-gray;
+      border-radius: $border-radius;
+
+      @include responsive(tablet) {
+        top: 110%;
+        left: 20%;
+      }
+    }
+
+    &::before {
+      background-color: $color-light;
+    }
+
+    &--html::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, $color-html);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--css::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, $color-css);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--js::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, $color-js);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--node::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, lightgreen);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--react::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, lightblue);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--py::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, $color-py);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--wp::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, $color-wp);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &--lx::after {
+      background-image:
+        linear-gradient(to right bottom, $color-light 1%, $color-lx);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+}

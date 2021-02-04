@@ -10,3 +10,8 @@ const isMobileDevice = navigator.userAgent.match(
 if (!isMobileDevice) {
   new LazyLoader();
 }
+
+fetch('https://developersojourn.site/wp-json/wp/v2/posts')
+  .then(data => data.json())
+  .then(console.log)
+  .catch(console.error);

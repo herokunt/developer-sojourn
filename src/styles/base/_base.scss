@@ -27,6 +27,7 @@ body {
   animation: animate-background 45s 9s infinite alternate;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 
   @media (prefers-color-scheme: dark) {
     color: $color-light;

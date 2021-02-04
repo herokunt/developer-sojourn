@@ -33,6 +33,7 @@
       display: grid;
       grid-gap: 1rem;
       grid-template-columns: repeat(auto-fit, 3.2rem);
+      justify-content: center;
 
       &--contact {
         justify-content: center;
