@@ -5,7 +5,7 @@
   grid-template-columns: repeat(4, 1fr);
 
   &__card {
-    background-image: linear-gradient(to right bottom, $color-html 10%, $color-light 10%);
+    background-color: $color-light;
     border-radius: $border-radius;
     border: 1px solid $color-gray-light;
     box-shadow: $box-shadow-light;
@@ -15,6 +15,11 @@
     transform: translateY(1rem);
     transition: all 0.3s;
     animation: card-come-in .5s forwards;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-gray-light;
+      color: $color-dark;
+    }
 
     &:hover {
       transform: translateY(-1rem);
