@@ -1,0 +1,24 @@
+.articles {
+  @include contain;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+
+  &__card {
+    background-image: linear-gradient(to right bottom, $color-html 10%, $color-light 10%);
+    border-radius: $border-radius;
+    border: 1px solid $color-gray-light;
+    box-shadow: $box-shadow-light;
+    padding: 2rem;
+    min-height: 10rem;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.3s;
+    animation: card-come-in .5s forwards;
+
+    &:hover {
+      transform: translateY(-1rem);
+      cursor: pointer;
+    }
+  }
+}

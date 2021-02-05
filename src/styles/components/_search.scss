@@ -1,31 +1,27 @@
 .control-group {
-  margin: 2rem 0 3rem 0;
-
-  &[open] .filters {
-    padding: 2rem;
-  }
+  margin-bottom: 5rem;
 }
 
-.filters {
-  font-family: PanameraRegular;
-  position: relative;
-  display: flex;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &::marker {
-    content: '';
-  }
-
-  &::after {
-    content: url(../assets/images/funnel.svg);
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
+// .filters {
+//   font-family: PanameraRegular;
+//   position: relative;
+//   display: flex;
+//
+//   &:hover {
+//     cursor: pointer;
+//   }
+//
+//   &::marker {
+//     content: '';
+//   }
+//
+//   &::after {
+//     content: url(../assets/images/funnel.svg);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//   }
+// }
 
 .search {
   @include contain;
@@ -60,7 +56,6 @@
     margin: 0 3rem;
     position: relative;
     font-family: PanameraRegular;
-    // font-weight: 300;
 
     @include responsive(tablet) {
       margin: 0 1rem 2rem 0;
@@ -90,6 +85,11 @@
 
     &::before {
       background-color: $color-light;
+    }
+
+    &::selection {
+      background: none;
+      color: $color-dark;
     }
 
     &--html::after {

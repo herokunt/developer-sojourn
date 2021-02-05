@@ -1,10 +1,80 @@
 .post {
-  @include contain;
-  padding: 3rem;
-  margin-top: 2rem;
+  position: fixed;
+  top: 0;
+  left: 15rem;
+  right: 15rem;
+  max-width: 100rem;
+  height: 100vh;
+  z-index: 999;
+  opacity: 0;
+  transform: scale(0);
+  overflow-x: auto;
+  transition: all 0.8s cubic-bezier(1,0,0,1);
+  pointer-events: none;
+
+  padding: 5rem 10rem;
   font-size: 1.7rem;
-  background-color: #fff;
+  color: $color-dark;
+  background-color: $color-light;
   border-radius: $border-radius;
   box-shadow: $box-shadow-light;
-  color: $color-dark;
+
+  &--active {
+    position: fixed;
+    top: 5rem;
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
+
+    @include responsive(portrait) {
+      top: 0;
+      left: 10rem;
+      right: 10rem;
+      width: 80vw;
+    }
+
+    @include responsive(tablet) {
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 5rem 7rem;
+      width: 100vw;
+    }
+
+    @include responsive(narrow) {
+      padding: 4rem;
+    }
+  }
+
+  &__close {
+    position: fixed;
+    font-size: 4rem;
+    right: 3rem;
+    top: 1rem;
+    transition: opacity 1s cubic-bezier(1,0,0,1);
+
+    &--active {
+      opacity: 1;
+
+      @include responsive(tablet) {
+        top: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active,
+      &::selection {
+        color: $color-gray;
+        background: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: PanameraRegular;
+    font-size: 4rem;
+    border-bottom: 1px solid $color-gray;
+  }
 }

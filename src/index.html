@@ -349,50 +349,63 @@
     </header>
 
     <form class="search">
-      <!-- <label class="search__label" for="search-field">Search Field</label> -->
-      <!-- <input class="search__input" id="search-field" name="search-field" type="text" placeholder="Looking for something?"> -->
-      <!-- <button class="search__input--reset" type="reset" name="button">X</button> -->
-      <!-- <button class="search__submit-btn" type="submit" name="button"> -->
-        <!-- <svg class="search__icon">
-          <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
-        </svg> -->
-      <!-- </button> -->
-      <details class="control-group" open="">
-        <summary class="filters"></summary>
+      <div class="control-group" id="mutationTarget">
         <input class="search__input" id="search-field" name="search-field" type="text" placeholder="Looking for something?">
 
-        <input class="search__filter" type="checkbox" checked name="html" value="html" id="html">
+        <input class="search__filter" type="checkbox" name="html" value="html" id="html">
         <label class="search__label search__label--html" for="html">HTML</label>
 
-        <input class="search__filter" type="checkbox" checked name="css" value="css" id="css">
+        <input class="search__filter" type="checkbox" name="css" value="css" id="css">
         <label class="search__label search__label--css" for="css">CSS</label>
 
-        <input class="search__filter" type="checkbox" checked name="javascript" value="javascript" id="javascript">
+        <input class="search__filter" type="checkbox" name="javascript" value="javascript" id="javascript">
         <label class="search__label search__label--js" for="javascript">JS</label>
 
-        <input class="search__filter" type="checkbox" checked name="node" value="node" id="node">
+        <input class="search__filter" type="checkbox" name="node" value="node" id="node">
         <label class="search__label search__label--node" for="node">Node.js</label>
 
-        <input class="search__filter" type="checkbox" checked name="react" value="react" id="react">
+        <input class="search__filter" type="checkbox" name="react" value="react" id="react">
         <label class="search__label search__label--react" for="react">React.js</label>
 
-        <input class="search__filter" type="checkbox" checked name="python" value="python" id="python">
+        <input class="search__filter" type="checkbox" name="python" value="python" id="python">
         <label class="search__label search__label--py" for="python">Python</label>
 
-        <input class="search__filter" type="checkbox" checked name="wordpress" value="wordpress" id="wordpress">
+        <input class="search__filter" type="checkbox" name="wordpress" value="wordpress" id="wordpress">
         <label class="search__label search__label--wp" for="wordpress">WordPress</label>
 
         <input class="search__filter" type="checkbox" checked name="devops" value="devops" id="devops">
         <label class="search__label search__label--lx" for="devops">DevOps</label>
-      </details>
-      <ul class="search__results"></ul>
+      </div>
     </form>
 
-    <article class="post">
-      This is where the post goes
-    </article>
+    <div class="articles">
+      <!-- <article class="articles__card">POST1</article>
+      <article class="articles__card">POST2</article>
+      <article class="articles__card">POST3</article>
+      <article class="articles__card">POST4</article>
+      <article class="articles__card">POST5</article>
+      <article class="articles__card">POST6</article>
+      <article class="articles__card">POST7</article>
+      <article class="articles__card">POST8</article> -->
+    </div>
   </section>
 
+  <section class="post" id="post">
+    <span class="post__close" id="post__close" aria-label="Close Article Modal">&times;</span>
+    <h3 class="post__title">Article Title</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
 
   <footer class="footer">
     <div class="row row--vertical-phone">
