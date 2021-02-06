@@ -7,15 +7,17 @@
     background-color: $color-darker;
     border-top: 1px dashed $color-light;
   }
-
-  &__heading {
-    @include contain;
-  }
+  //
+  // &__heading {
+  //   @include contain;
+  // }
 
   &__logo-container {
-    display: inline-block;
+    display: block;
     width: 10rem;
     height: 10rem;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
   }
 
   &__logo {
@@ -37,5 +39,27 @@
         color: $color-p5;
       }
     }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+.copyleft {
+  height: 1.5rem;
+  margin-left: 1rem;
+
+  &__text {
+    display: inline;
+  }
+
+  &__icon {
+    height: 100%;
+    fill: #fff;
+    stroke: #fff;
   }
 }

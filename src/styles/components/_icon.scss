@@ -1,0 +1,25 @@
+.icon {
+  width: 3.2rem;
+  height: 3.2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include responsive(phone) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &--light-mode {
+    fill: $color-light;
+  }
+
+  &--dark-mode {
+    fill: $color-darker !important;
+
+    @media (prefers-color-scheme: dark) {
+      fill: $color-light !important;
+    }
+  }
+}

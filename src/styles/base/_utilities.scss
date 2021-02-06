@@ -12,3 +12,6 @@
 .is-centered {
   margin: 0 auto;
 }
+.contain {
+  @include contain;
+}
