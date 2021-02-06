@@ -1,0 +1,58 @@
+.article-list {
+  @include contain;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+
+  &__item {
+    box-decoration-break: clone;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    min-height: 10rem;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.3s;
+    animation: card-come-in .5s forwards;
+    background-image: linear-gradient(to right bottom, coral, transparent);
+    filter: grayscale(.2);
+    border-radius: $border-radius;
+    border: 1px solid $color-gray-light;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-gray-light;
+      color: $color-dark;
+    }
+
+    &:hover {
+      border: 1px solid $color-gray-dark;
+      background-color: $color-lighter;
+      transform: translateY(-.1rem);
+      filter: grayscale(0);
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: $box-shadow-light;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &__title {
+    font-family: PanameraRegular;
+    font-size: 1.6rem;
+  }
+}

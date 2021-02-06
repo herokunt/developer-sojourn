@@ -340,18 +340,14 @@
 
   <section class="section section-notes" id="section-notes">
 
-    <aside class="banner banner--warning">
-      This section is under construction - A lot of notes that need to be reviewed and uploaded...
-    </aside>
-
     <header class="section__headline">
-      <h2 class="section__headline--title">Notes...</h2>
+      <h2 class="section__headline--title">Blog...</h2>
     </header>
 
     <form class="search">
-      <div class="control-group" id="mutationTarget">
-        <input class="search__input" id="search-field" name="search-field" type="text" placeholder="Looking for something?">
+      <input class="search__input" id="search-field" name="search-field" type="text" placeholder="Looking for something?">
 
+      <div class="control-group">
         <input class="search__filter" type="checkbox" name="html" value="html" id="html">
         <label class="search__label search__label--html" for="html">HTML</label>
 
@@ -374,19 +370,19 @@
         <label class="search__label search__label--wp" for="wordpress">WordPress</label>
 
         <input class="search__filter" type="checkbox" name="devops" value="devops" id="devops">
-        <label class="search__label search__label--lx" for="devops">DevOps</label>
+        <label class="search__label search__label--lx" for="devops">SysAdmin</label>
       </div>
     </form>
 
-    <div class="articles">
-      <!-- This is where posts previews are displayed as cards -->
-    </div>
-  </section>
+    <div class="article-list"></div>
 
-  <section class="post" id="post">
-    <span class="post__close" id="post__close" aria-label="Close Article Modal">&times;</span>
-    <h3 class="post__title" id="post__title"></h3>
-    <div class="post__content" id="post__content"></div>
+    <aside class="article-modal">
+      <span class="article-modal__close" aria-label="Close Article Modal">&times;</span>
+      <h3 class="article-modal__title"></h3>
+      <article class="article-modal__content"></article>
+    </aside>
+    <div class="article-modal__overlay"></div>
+
   </section>
 
   <footer class="footer">

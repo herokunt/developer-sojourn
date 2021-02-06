@@ -1,14 +1,19 @@
 class LazyLoader {
   constructor() {
-    this.videos = document.querySelectorAll('.card__video');
-    this.videoFormat = this.checkVideoSupport();
+    this.videos  = document.querySelectorAll('.card__video');
+    this.sources = [];
+    // this.videoFormat = this.checkVideoSupport();
     this.createObserver();
   }
+  //
+  // checkVideoSupport() {
+  //   return this.videos[0].canPlayType('video/webm; codecs="vp8, vorbis"')
+  //     ? 'webm'
+  //     : 'mp4';
+  // }
 
-  checkVideoSupport() {
-    return this.videos[0].canPlayType('video/webm; codecs="vp8, vorbis"')
-      ? 'webm'
-      : 'mp4';
+  loadVideos() {
+
   }
 
   createObserver() {
@@ -32,7 +37,6 @@ class LazyLoader {
 export default LazyLoader;
 
 /*
-  CREDITS:
   - https://davidwalsh.name/detect-supported-video-formats-javascript
   - https://redstapler.co/detect-mobile-device-with-javascript/
 */

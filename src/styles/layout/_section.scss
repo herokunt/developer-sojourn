@@ -150,6 +150,7 @@
 
   &-notes {
     background-color: $color-light;
+    padding: 5rem 0 10rem 0;
 
     @media (prefers-color-scheme: dark) {
       background-color: $color-dark;

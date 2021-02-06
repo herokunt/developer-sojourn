@@ -1,48 +1,46 @@
-.post {
+.article-modal {
   position: fixed;
   top: 0;
-  left: 15rem;
-  right: 15rem;
-  max-width: 100rem;
+  width: 50%;
+  max-width: 50vw;
   height: 100vh;
   z-index: 999;
   opacity: 0;
-  transform: scale(0);
+  transform: translateX(200%);
   overflow-x: auto;
   transition: all 0.4s cubic-bezier(1,0,0,1);
   pointer-events: none;
 
-  padding: 5rem 10rem;
+  padding: 5rem;
   font-size: 1.7rem;
   color: $color-dark;
-  background-color: $color-light;
-  border-radius: $border-radius;
+  background-color: $color-lighter;
   box-shadow: $box-shadow-light;
 
   &--active {
     position: fixed;
-    top: 5rem;
     pointer-events: auto;
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(100%);
 
-    @include responsive(portrait) {
-      top: 0;
+    @include responsive(landscape) {
       left: 10rem;
       right: 10rem;
-      width: 80vw;
+      width: 80%;
+      max-width: 80vw;
+      padding: 5rem 10rem;
+      transform: translateX(0);
+    }
+
+    @include responsive(portrait) {
+      max-width: 100%;
     }
 
     @include responsive(tablet) {
-      top: 0;
       left: 0;
       right: 0;
       padding: 5rem 7rem;
       width: 100vw;
-    }
-
-    @include responsive(narrow) {
-      padding: 4rem;
     }
   }
 
@@ -55,10 +53,6 @@
 
     &--active {
       opacity: 1;
-
-      @include responsive(tablet) {
-        top: 0;
-      }
 
       &:hover {
         cursor: pointer;
@@ -74,7 +68,34 @@
 
   &__title {
     font-family: PanameraRegular;
-    font-size: 4rem;
+    font-size: 3.5rem;
     border-bottom: 1px solid $color-gray;
+    margin-bottom: 3rem;
+
+    @include responsive(tablet) {
+      font-size: 3.25rem;
+    }
+    @include responsive(phone) {
+      font-size: 2.75rem;
+    }
+    @include responsive(narrow) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba($color-darker, 0.4);
+    display: none;
+
+    &--active {
+      display: block;
+      opacity: 1;
+    }
   }
 }

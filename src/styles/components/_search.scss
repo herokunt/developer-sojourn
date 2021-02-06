@@ -1,37 +1,21 @@
 .control-group {
   margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-
-// .filters {
-//   font-family: PanameraRegular;
-//   position: relative;
-//   display: flex;
-//
-//   &:hover {
-//     cursor: pointer;
-//   }
-//
-//   &::marker {
-//     content: '';
-//   }
-//
-//   &::after {
-//     content: url(../assets/images/funnel.svg);
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//   }
-// }
 
 .search {
   @include contain;
 
   &__input {
+    position: relative;
     width: 100%;
     padding: 1rem;
     margin-bottom: 2.5rem;
     font-size: 2rem;
-    border: 2px solid transparent;
+    border: 1px solid $color-gray-light;
     border-radius: $border-radius;
     box-shadow: $box-shadow-light;
     color: $color-dark;
@@ -40,7 +24,7 @@
     &:focus,
     &:hover,
     &:active {
-      border: 2px solid $color-dark;
+      border: 1px solid $color-dark;
     }
   }
 
