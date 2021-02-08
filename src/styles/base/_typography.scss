@@ -66,6 +66,10 @@
   line-height: 1.9;
   hyphens: auto;
 
+  &:not(:last-child) {
+    margin-bottom: .5rem;
+  }
+
   @include responsive(phone) {
     font-size: 1.8rem;
   }

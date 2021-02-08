@@ -1,6 +1,7 @@
 .card {
   position: relative;
   perspective: 150rem;
+  contain: layout;
 
   @include responsive(tablet) {
     height: 20rem;

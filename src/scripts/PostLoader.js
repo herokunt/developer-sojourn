@@ -16,6 +16,7 @@ class PostLoader {
     this.prevQuery = '';
 
     this.observer = undefined;
+    this.posts_per_page = 6;
     this.posts = [];
     this.timer = 0;
 
@@ -27,8 +28,6 @@ class PostLoader {
     this.form.addEventListener('change', (e) => this.handleFilterUpdate(e));
     this.form.addEventListener('submit', (e) => e.preventDefault());
     this.searchField.addEventListener('keyup', () => this.handleKeyPress());
-    // this.articleList.addEventListener('click', (e) => this.handleRenderPost(e));
-    // this.articleModalClose.addEventListener('click', () => this.closeModal());
     document.addEventListener('click', (e) => this.handleClick(e));
     document.addEventListener('keydown', (e) => this.handleKeyEscape(e));
   }
@@ -59,7 +58,7 @@ class PostLoader {
     fetch('https://developersojourn.site/wp-json/content/posts')
       .then(res => res.json())
       .then(posts => {
-        const firstLoadPosts = posts.slice(0, 6);
+        const firstLoadPosts = posts.slice(0, this.posts_per_page);
         this.renderPosts(firstLoadPosts);
         this.posts = posts;
       })
@@ -165,7 +164,7 @@ class PostLoader {
 
   renderPosts(posts) {
     if (!posts) {
-      this.articleList.innerHTML = '<p>There are no results</p>';
+      posts = this.posts.slice(0, this.posts_per_page);
       return;
     }
 

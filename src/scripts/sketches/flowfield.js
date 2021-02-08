@@ -1,11 +1,11 @@
 import p5 from 'p5';
 
-const NOISE_OFFSET = 0.085;
+const NOISE_OFFSET = 0.06;
 const GRID_SIZE = 20;
-const MAX_PARTICLES = 100;
+const MAX_PARTICLES = 200;
 const SHOW_FIELD = false;
-const FRAME_RATE = 30;
-const STROKE_COLOR = 'RGBA(255,255,255, .05)';
+const FRAME_RATE = 18;
+const STROKE_COLOR = 'RGBA(241,241,241, 0.03)';
 let _cols, _rows, _xoff, _yoff, _zoff, _particles, _flowField;
 
 class Particle {
@@ -13,8 +13,8 @@ class Particle {
     this.p = p;
 
     this.pos = p.createVector(
-      Math.floor(Math.random() * p.width) + 1,
-      Math.floor(Math.random() * p.height) + 1
+      p.randomGaussian(p.width / 2, 500),
+      p.randomGaussian(p.height / 2, 200)
     );
     this.vel = p.createVector();
     this.acc = p.createVector();
@@ -72,6 +72,9 @@ class Particle {
 
 export default p => {
 
+  let canvasDOM;
+  let timer;
+
   p.stopLoop = () => {
     p.noLoop();
   };
@@ -86,10 +89,19 @@ export default p => {
     return null;
   };
 
+  p.windowResized = () => {
+    clearTimeout(timer);
+    p.noLoop();
+    timer = setTimeout(() => {
+      p.resizeCanvas(document.body.clientWidth, canvasDOM.scrollHeight);
+      p.loop();
+    }, 250)
+  }
+
   p.setup = () => {
     const canvas = p.createCanvas(100, 100);
-    const parent = canvas.parent();
-    p.resizeCanvas(parent.scrollWidth, parent.scrollHeight);
+    canvasDOM = canvas.parent();
+    p.resizeCanvas(canvasDOM.scrollWidth, canvasDOM.scrollHeight);
 
     p.frameRate(FRAME_RATE);
 

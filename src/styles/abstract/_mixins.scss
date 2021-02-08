@@ -55,14 +55,17 @@
 }
 
 @mixin glass-effect {
+
   background-image: linear-gradient(
-  to right top,
-  rgba(241,241,241,.3),
-  rgba(255,255,255,.2)
-  );
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+    to right top,
+    rgba(241,241,241,.3),
+    rgba(255,255,255,.2));
   box-shadow: 1rem 1rem 4rem rgba($color-darker, .15);
+
+  @supports (backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px)) {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
 
   @media (prefers-color-scheme: dark) {
     background-image: linear-gradient(

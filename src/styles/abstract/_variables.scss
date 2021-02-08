@@ -47,3 +47,9 @@ $column-gap: 2rem;
 $box-shadow: 1rem 2rem 2rem rgba($color-darker, 0.3);
 $box-shadow-light: .25rem 1rem 2rem rgba($color-darker, 0.2);
 $text-shadow: 1rem 1rem 1.25rem rgba($color-darker, .2);
+
+@media (prefers-color-scheme: dark) {
+  $box-shadow: none;
+  $box-shadow-light: none;
+  $text-shadow: none;
+}

@@ -5,6 +5,7 @@
   margin: auto 0;
   text-align: center;
   padding-top: 12rem;
+  contain: content;
 
   @include responsive(tablet) {
     min-height: 90vh;

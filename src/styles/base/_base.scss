@@ -7,10 +7,10 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 62.5%; // desktop-first
-
-  @include responsive(portrait)  { font-size: 56.25%; }
-  @include responsive(phone)     { font-size: 50%;    }
+  @include responsive(portrait)   { font-size: 56.25%; }
+  @include responsive(narrow)      { font-size: 50%;    }
   @include responsive(widescreen) { font-size: 75%;    }
 }
 
@@ -26,11 +26,14 @@ body {
   transition: background-position 9s;
   animation: animate-background 45s 9s infinite alternate;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
 
   @media (prefers-color-scheme: dark) {
     color: $color-light;
+  }
+
+  @media (prefers-reduced-motion) {
+    background-image: none;
+    background-color: #7c9cf2;
   }
 }
 

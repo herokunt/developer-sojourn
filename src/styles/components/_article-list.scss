@@ -4,6 +4,10 @@
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
 
+  @include responsive(phone) {
+    padding: 0 1rem;
+  }
+
   &__item {
     box-decoration-break: clone;
     display: flex;
@@ -17,9 +21,12 @@
     transition: all 0.3s;
     animation: card-come-in .5s forwards;
     background-image: linear-gradient(to right bottom, coral, transparent);
-    filter: grayscale(.2);
     border-radius: $border-radius;
     border: 1px solid $color-gray-light;
+
+    @media screen and (hover: hover){
+      filter: grayscale(.2);
+    }
 
     @media (prefers-color-scheme: dark) {
       background-color: $color-gray-light;

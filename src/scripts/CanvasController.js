@@ -1,20 +1,23 @@
-import p5       from 'p5';
-import matrix   from './sketches/matrix';
-import circles  from './sketches/circles';
-import snowfall from './sketches/snowfall';
-import blobby   from './sketches/blobby';
+import p5         from 'p5';
+import matrix     from './sketches/matrix';
+import circles    from './sketches/circles';
+import snowfall   from './sketches/snowfall';
+import blobby     from './sketches/blobby';
+import flowfield  from './sketches/flowfield';
 
 const CANVAS_ELEMENT  = 'p5canvas';
+const DEFAULT_SKETCH = circles;
 const SKETCH_LIST = {
   circles,
   snowfall,
   blobby,
-  matrix
+  matrix,
+  flowfield
 };
 
 class CanvasController {
-  constructor(sketch) {
-    this.current  = new p5(sketch, CANVAS_ELEMENT);
+  constructor() {
+    this.current  = new p5(DEFAULT_SKETCH, CANVAS_ELEMENT);
     this.observer = this.createObserver();
     this.listen();
   };
@@ -56,9 +59,6 @@ class CanvasController {
     this._changeSketch(sketch)
       .then(instance => this.current = instance)
       .catch(console.error);
-    // setTimeout(() => {
-    //   this.current = new p5(SKETCH_LIST[sketch], CANVAS_ELEMENT);
-    // }, 250);
   }
 
   _changeSketch(sketch) {
@@ -90,4 +90,4 @@ class CanvasController {
   }
 }
 
-export default new CanvasController(circles);
+export default CanvasController;

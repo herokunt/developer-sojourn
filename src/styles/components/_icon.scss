@@ -1,7 +1,8 @@
 .icon {
   width: 3.2rem;
   height: 3.2rem;
-
+  pointer-events: none;
+  
   &:hover {
     cursor: pointer;
   }
