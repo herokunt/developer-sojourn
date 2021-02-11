@@ -1,8 +1,6 @@
 node_modules/
 dist/
 
-package-lock.json
-
 # Reference ignore lists from:
 # https://gist.github.com/octocat/9257657
 # https://github.com/github/gitignore/blob/master/Node.gitignore
