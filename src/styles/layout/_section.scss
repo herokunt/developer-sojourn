@@ -10,7 +10,8 @@
   }
 
   &-about {
-    overflow-x: clip;
+    // overflow-x: clip;
+    content: contain;
     background-color: $color-light;
 
     @media (prefers-color-scheme: dark) {
