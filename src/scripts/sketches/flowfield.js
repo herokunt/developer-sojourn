@@ -1,11 +1,11 @@
 import p5 from 'p5';
 
-const NOISE_OFFSET = 0.06;
-const GRID_SIZE = 20;
-const MAX_PARTICLES = 200;
+const NOISE_OFFSET = 0.5;
+const GRID_SIZE = 40;
+const MAX_PARTICLES = 500;
 const SHOW_FIELD = false;
 const FRAME_RATE = 18;
-const STROKE_COLOR = 'RGBA(241,241,241, 0.03)';
+const STROKE_COLOR = 'RGBA(200,200,200,0.075)';
 let _cols, _rows, _xoff, _yoff, _zoff, _particles, _flowField;
 
 class Particle {
@@ -13,8 +13,8 @@ class Particle {
     this.p = p;
 
     this.pos = p.createVector(
-      p.randomGaussian(p.width / 2, 500),
-      p.randomGaussian(p.height / 2, 200)
+      p.randomGaussian(p.width / 2, 100),
+      p.randomGaussian(p.height / 2, 100)
     );
     this.vel = p.createVector();
     this.acc = p.createVector();
@@ -101,7 +101,8 @@ export default p => {
   p.setup = () => {
     const canvas = p.createCanvas(100, 100);
     canvasDOM = canvas.parent();
-    p.resizeCanvas(canvasDOM.scrollWidth, canvasDOM.scrollHeight);
+    // p.resizeCanvas(canvasDOM.scrollWidth, canvasDOM.scrollHeight);
+    p.resizeCanvas(window.innerWidth, window.innerHeight);
 
     p.frameRate(FRAME_RATE);
 

@@ -4,6 +4,15 @@
 .medium-margin-y {
   margin: 2rem 0;
 }
+.padding-2 {
+  padding: 2rem;
+}
+.padding-3 {
+  padding: 3rem;
+}
+.padding-4 {
+  padding: 4rem;
+}
 .no-overflow {
   overflow: hidden;
 }
@@ -17,4 +26,7 @@
 }
 .contain {
   @include contain;
+}
+.has-background-glass {
+  @include glass-effect;
 }

@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "live-server": "^1.2.1",
+    "matter-js": "^0.17.0",
     "p5": "^1.2.0"
   }
 }

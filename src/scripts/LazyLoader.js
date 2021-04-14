@@ -1,3 +1,8 @@
+/*
+  - https://davidwalsh.name/detect-supported-video-formats-javascript
+  - https://redstapler.co/detect-mobile-device-with-javascript/
+*/
+
 class LazyLoader {
   constructor() {
     this.videos  = document.querySelectorAll('.card__video');
@@ -41,8 +46,3 @@ class LazyLoader {
 }
 
 export default LazyLoader;
-
-/*
-  - https://davidwalsh.name/detect-supported-video-formats-javascript
-  - https://redstapler.co/detect-mobile-device-with-javascript/
-*/

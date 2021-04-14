@@ -11,6 +11,10 @@
   &--gap-4 { gap: 4rem; }
   &--gap-5 { gap: 5rem; }
 
+  &--left {
+    justify-content: start;
+  }
+
   &--vertical-tablet {
     @include responsive(tablet) {
       flex-direction: column;

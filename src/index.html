@@ -6,10 +6,58 @@
   <title>Developer Sojourn</title>
 </head>
 
-<body>
-  <section class="header" id="p5canvas">
+<body id="p5canvas">
+  <section class="header">
+    <header class="section__headline">
+      <!-- <h2 class="section__headline--title">Developer Sojourn</h2> -->
+      <h1 class="section__headline--title">Developer Sojourn</h1>
+      <h2 class="section__headline--subtitle">Take a break, have a look around</h2>
+    </header>
+    <div class="row row--left">
+      <div class="column">
+        <nav class="header__navigation">
+          <ul class="header__menu">
+            <li class="header__item"><a class="header__link" href="#section-about">About</a></li>
+            <li class="header__item"><a class="header__link" href="#section-projects">Projects</a></li>
+            <li class="header__item"><a class="header__link" href="#section-notes">Blog</a></li>
+  
+            <li class="header__item dropdown">
+              <svg class="dropdown__icon"><use xlink:href="../assets/images/sprite.svg#icon-colours"></use></svg>
+              <nav class="dropdown__content">
+                <ul class="dropdown__menu">
+                  <li class="dropdown__item"><button class="dropdown__btn dropdown__btn--active" id="circles">Circles</button></li>
+                  <li class="dropdown__item"><button class="dropdown__btn" id="snowfall">SnowFall</button></li>
+                  <li class="dropdown__item"><button class="dropdown__btn" id="blobby">Blobby</button></li>
+                  <li class="dropdown__item"><button class="dropdown__btn" id="matrix">Matrix</button></li>
+                  <li class="dropdown__item"><button class="dropdown__btn" id="flowfield">Flowfield</button></li>
+                </ul>
+              </nav>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
-    <div class="header__background">
+    <!-- <div class="row row--left">
+      <div class="column">
+        <footer class="section-about__footer">
+          <h3 class="content-title is-centered">See what I'm up to and get in touch</h3>
+          <div class="section-about__icons section-about__icons--contact">
+            <a class="tooltip tooltip--right" data-tooltip="GitHub" href="https://github.com/herokunt">
+              <svg class="icon icon--dark-mode"><use xlink:href="../assets/images/sprite.svg#icon-github"></use></svg>
+            </a>
+            <a class="tooltip tooltip--right" data-tooltip="devsojourn@pm.me" href="mailto:devsojourn@pm.me">
+              <svg class="icon icon--dark-mode"><use xlink:href="../assets/images/sprite.svg#icon-envelope"></use></svg>
+            </a>
+            <a class="tooltip tooltip--right" data-tooltip="PGP:&nbsp;E2DB04D4A7F405A5" href="publickey.devsojourn@pm.me.asc" download>
+              <svg class="icon icon--dark-mode"><use xlink:href="../assets/images/sprite.svg#icon-key1"></use></svg>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </div> -->
+
+    <!-- <div class="header__background">
       <header class="header__headline">
         <h1 class="header__headline--title">Developer Sojourn</h1>
         <h2 class="header__headline--subtitle">Take a break, have a look around</h2>
@@ -35,7 +83,7 @@
           </li>
         </ul>
       </nav>
-    </div>
+    </div> -->
 
     <svg class="header__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 115" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
@@ -60,8 +108,6 @@
           <p class="paragraph">I learned how to write code because I wanted to make sense of so many things about technology that fascinate me. The little marvels of the modern world that we give for granted every day: instant messaging, video streaming, 3D graphics, cryptography or "the cloud".</p>
           <p class="paragraph">Many people predict that in the not-so-distant future coding will become an essential skill to have. I think learning how to code is so much more than that. It's an empowering, challenging and mind-opening exercise that requires patience and creativity. It pushes you to do better, learn something new, stay curious and sharp. That feeling of being able to make what I want however I want, is why I learned to code. A feeling there's not coming back from.</p>
           <p class="paragraph">Beyond technology I enjoy the simple things the most: beer with friends, a good read, a hike in the mountains. I'm also an avid traveler and diver. If you want to know more about me, below you will find my GitHub page, email address and my PGP public key.</p>
-
-
 
           <footer class="section-about__footer">
             <h3 class="content-title is-centered">See what I'm up to and get in touch</h3>
@@ -349,7 +395,7 @@
 
   </section>
 
-  <section class="section section-notes" id="section-notes">
+  <!-- <section class="section section-notes" id="section-notes">
 
     <header class="section__headline">
       <h2 class="section__headline--title">Blog...</h2>
@@ -394,7 +440,7 @@
     </aside>
     <div class="article-modal__overlay"></div>
 
-  </section>
+  </section> -->
 
   <footer class="footer">
     <div class="row row--vertical-phone">

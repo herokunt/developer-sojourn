@@ -69,6 +69,7 @@
   }
 
   &__divider {
+    // display: none;
     position: absolute;
     bottom: -1px; // quick fix for misplaced svg no firefox
     left: 0;

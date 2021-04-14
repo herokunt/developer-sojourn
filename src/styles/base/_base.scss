@@ -21,10 +21,10 @@ body {
   line-height: 1.6;
   color: $color-dark;
   background-image: $background-gradient;
-  background-size: 900%;
-  background-position: left;
-  transition: background-position 9s;
-  animation: animate-background 45s 9s infinite alternate;
+  // background-size: 900%;
+  // background-position: left;
+  // transition: background-position 9s;
+  // animation: animate-background 45s 9s infinite alternate;
   box-sizing: border-box;
 
   @media (prefers-color-scheme: dark) {
