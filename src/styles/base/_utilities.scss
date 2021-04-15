@@ -4,6 +4,12 @@
 .medium-margin-y {
   margin: 2rem 0;
 }
+.margin-top {
+  margin-top: 2rem;
+}
+.margin-bottom {
+  margin-bottom: 2rem;
+}
 .no-overflow {
   overflow: hidden;
 }
@@ -15,6 +21,12 @@
 .is-centered {
   margin: 0 auto;
 }
+.center-text {
+  text-align: center;
+}
 .contain {
   @include contain;
+}
+.z-10 {
+  z-index: 10;
 }

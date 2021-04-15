@@ -1,25 +1,27 @@
 import p5         from 'p5';
 import matrix     from './sketches/matrix';
 import circles    from './sketches/circles';
+import bubbles    from './sketches/bubbles';
 import snowfall   from './sketches/snowfall';
 import blobby     from './sketches/blobby';
 import flowfield  from './sketches/flowfield';
 
 const CANVAS_ELEMENT  = 'p5canvas';
-const DEFAULT_SKETCH = circles;
+const DEFAULT_SKETCH = bubbles;
 const SKETCH_LIST = {
   circles,
   snowfall,
   blobby,
   matrix,
-  flowfield
+  flowfield,
+  bubbles
 };
 
 class CanvasController {
   constructor() {
     this.current  = new p5(DEFAULT_SKETCH, CANVAS_ELEMENT);
     this.observer = this.createObserver();
-    this.listen();
+    // this.listen();
   };
 
   listen() {

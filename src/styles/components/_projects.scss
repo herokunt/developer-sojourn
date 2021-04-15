@@ -1,0 +1,33 @@
+.projects {
+  @include contain;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.project {
+  @include glass-effect;
+  padding: 2rem;
+  border-radius: 3px;
+
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+
+  &__title {
+    display: inline-block;
+    font-family: 'PanameraRegular';
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+      color: steelblue;
+    }
+  }
+
+  &__stack {
+    display: flex;
+    gap: 1rem;
+  }
+}

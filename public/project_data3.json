@@ -1,0 +1,18 @@
+{
+  "bytes_and_pipes": {
+    "title": "Bytes And Pipes",
+    "content": "<video\nclass='card__video'\nsrc='../assets/videos/flowfield.webm'\nposter='../assets/images/flowfield-thumb.jpeg'\npreload='none'\nmuted\nloop>\n</video>\n<p>Some description</p>"
+  },
+  "gadget_budget": {
+    "title": "Gadget Budget",
+    "content": "<video\nclass='card__video'\nsrc='../assets/videos/flowfield.webm'\nposter='../assets/images/flowfield-thumb.jpeg'\npreload='none'\nmuted\nloop>\n</video>\n<p>Some description</p>"
+  },
+  "batch_resizer": {
+    "title": "Batch Resizer",
+    "content": "<video\nclass='card__video'\nsrc='../assets/videos/flowfield.webm'\nposter='../assets/images/flowfield-thumb.jpeg'\npreload='none'\nmuted\nloop>\n</video>\n<p>Some description</p>"
+  },
+  "password_checker": {
+    "title": "Password Checker",
+    "content": "<video\nclass='card__video'\nsrc='../assets/videos/flowfield.webm'\nposter='../assets/images/flowfield-thumb.jpeg'\npreload='none'\nmuted\nloop>\n</video>\n<p>Some description</p>"
+  }
+}

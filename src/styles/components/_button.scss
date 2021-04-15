@@ -1,0 +1,10 @@
+.btn {
+  background-color: $color-lighter;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-light;
+  }
+}

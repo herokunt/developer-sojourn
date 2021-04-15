@@ -1,0 +1,38 @@
+{
+  "bytes_and_pipes": {
+    "title": "Bytes And Pipes",
+    "preview": "<video
+      class='card__video'
+      src='../assets/videos/flowfield.webm'
+      poster='../assets/images/flowfield-thumb.jpeg'
+      preload='none'
+      muted
+      loop>
+    </video>",
+    "description": "Transfer large files easily and securely using end-to-end encryption right in your web browser."
+  },
+  "gadget_budget": {
+    "title": "Gadget Budget",
+    "preview": "<video
+      class='card__video'
+      src='../assets/videos/flowfield.webm'
+      poster='../assets/images/flowfield-thumb.jpeg'
+      preload='none'
+      muted
+      loop>
+    </video>",
+    "description": "Manage your expenses privately, using end-to-end encryption and in perfect synch across devices."
+  },
+  "batch_resizer": {
+    "title": "Batch Resizer",
+    "preview": "<video
+      class='card__video'
+      src='../assets/videos/flowfield.webm'
+      poster='../assets/images/flowfield-thumb.jpeg'
+      preload='none'
+      muted
+      loop>
+    </video>",
+    "description": "Utility script for bulk image rezising, file convertion and archiving for efficient file share."
+  }
+}
