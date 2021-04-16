@@ -1,0 +1,41 @@
+.tooltip {
+  position: relative;
+
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 110%;
+    left: 0;
+    padding: .5rem;
+    border-radius: $border-radius;
+    background-color: $color-dark;
+    color: $color-light;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.2s opacity 0.3s;
+    z-index: 999;
+  }
+
+  &--right {
+    position: relative;
+
+    &::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 110%;
+      left: -100%;
+      padding: .5rem;
+      border-radius: $border-radius;
+      background-color: $color-dark;
+      color: $color-light;
+      transform: scale(0);
+      opacity: 0;
+      transition: transform 0.2s opacity 0.3s;
+    }
+  }
+}

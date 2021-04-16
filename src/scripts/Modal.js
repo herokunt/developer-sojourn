@@ -4,6 +4,7 @@ class Modal {
     this.modal = document.querySelector('.project-modal');
     this.modalClose = document.querySelector('.project-modal__close');
     this.modalTitle = document.querySelector('.project-modal__title');
+    this.modalPreview = document.querySelector('.project-modal__preview');
     this.modalContent = document.querySelector('.project-modal__content');
     this.modalOverlay = document.querySelector('.project-modal__overlay');
     this.isOpen = false;
@@ -23,6 +24,7 @@ class Modal {
         .then(data => {
           const project = e.target.dataset.project;
           this.modalTitle.innerHTML = data[project].title;
+          this.modalPreview.innerHTML = data[project].preview;
           this.modalContent.innerHTML = data[project].content;
           this.openModal();
         })

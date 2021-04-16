@@ -84,6 +84,12 @@
     }
   }
 
+  &__preview {
+    // background-color: $color-dark;
+    // width: 100%;
+    text-align: center;
+  }
+
   &__overlay {
     position: fixed;
     top: 0;

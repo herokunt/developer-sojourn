@@ -1,7 +1,7 @@
 import p5 from 'p5';
 
 const FRAME_RATE = 24;
-const TOTAL_BUBBLES = 200;
+const TOTAL_BUBBLES = 100;
 
 class Bubble {
   constructor(x, y, m, p){

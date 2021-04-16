@@ -7,7 +7,8 @@
 }
 
 .project {
-  @include glass-effect;
+  // @include glass-effect;
+  background-color: $color-light;
   padding: 2rem;
   border-radius: 3px;
 
