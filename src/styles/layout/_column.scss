@@ -1,5 +1,6 @@
 .row {
-  max-width: $max-width;
+  // max-width: $max-width;
+  max-width: clamp($max-width, 80vw);
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -46,6 +47,12 @@
     &--bot {
       justify-content: flex-end;
       align-items: center;
+    }
+
+    &--not-on-mobile {
+      @include responsive(phone) {
+        display: none;
+      }
     }
 
     &--fifth      { flex: 0 1 20%;}

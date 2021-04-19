@@ -7,7 +7,8 @@
     height: 20rem;
   }
 
-  &__video {
+  &__video,
+  &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -62,7 +63,8 @@
       }
     }
     &--front-x {
-      background-color: $color-light;
+      // background-color: $color-light;
+      background-color: transparent;
     }
     &--back-x {
       background-color: $color-darker;
@@ -215,6 +217,20 @@
     }
   }
 
+  &--8 { // bytes and pipes
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
+
+    @include responsive(portrait) {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+    }
+    @include responsive(tablet) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
   /* BACK OF THE CARD */
 
   &__title {
@@ -223,7 +239,8 @@
     }
 
     &:hover {
-      cursor: default;
+      cursor: pointer;
+      color: $color-gray-light;
     }
   }
 

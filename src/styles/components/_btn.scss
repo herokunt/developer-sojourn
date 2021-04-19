@@ -1,0 +1,40 @@
+%button {
+  background-color: $color-light;
+  border: none;
+}
+
+%rounded {
+  border-radius: 50%;
+}
+
+%floating {
+  position: fixed;
+  right: 5rem;
+  bottom: 10rem;
+  z-index: 99;
+  box-shadow: $box-shadow;
+}
+
+%pop-transition {
+  transition: transform 0.2s cubic-bezier(.68,-0.55,.27,1.55) 0.2s;
+}
+
+.btn {
+  @extend %button;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--controller {
+    @extend %rounded;
+    @extend %floating;
+    @extend %pop-transition;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  &--hidden {
+    transform: scale(0);
+  }
+}

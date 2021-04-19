@@ -1,26 +1,29 @@
 class PostLoader {
   constructor() {
-    this.form = document.querySelector('.search');
+    this.menu = document.querySelector('.search');
+    this.form = document.querySelector('.search__form');
     this.searchField = this.form.querySelector('.search__input');
     this.searchFilters = Array.from(this.form.querySelectorAll('.search__filter'));
 
-    this.articleList = document.querySelector('.article-list');
-    this.articleModal = document.querySelector('.article-modal');
-    this.articleModalClose = document.querySelector('.article-modal__close');
-    this.articleModalTitle = document.querySelector('.article-modal__title');
-    this.articleModalContent = document.querySelector('.article-modal__content');
-    this.articleModalOverlay = document.querySelector('.article-modal__overlay');
+    this.toggler = document.querySelector('.blog-header__search');
+    this.closeBtn = document.querySelector('.search__close');
+    this.searchResults = document.querySelector('.search__results');
+    // this.articleModal = document.querySelector('.article-modal');
+    // this.articleModalClose = document.querySelector('.article-modal__close');
+    // this.articleModalOverlay = document.querySelector('.article-modal__overlay');
+    this.resultTitle = document.querySelector('.result__title');
+    this.resultContent = document.querySelector('.result__content');
     this.postPreviousId = 0;
 
     this.currentFilters = [];
     this.prevQuery = '';
 
-    this.observer = undefined;
+    // this.observer = undefined;
     this.posts_per_page = 6;
     this.posts = [];
     this.timer = 0;
 
-    this.createObserver();
+    // this.createObserver();
     this.events();
   }
 
@@ -28,30 +31,13 @@ class PostLoader {
     this.form.addEventListener('change', (e) => this.handleFilterUpdate(e));
     this.form.addEventListener('submit', (e) => e.preventDefault());
     this.searchField.addEventListener('keyup', () => this.handleKeyPress());
-    document.addEventListener('click', (e) => this.handleClick(e));
+    this.toggler.addEventListener('click', () => this.openModal());
+    this.closeBtn.addEventListener('click', () => this.closeModal());
     document.addEventListener('keydown', (e) => this.handleKeyEscape(e));
   }
 
-  createObserver() {
-    const target = document.getElementById('section-notes');
-
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.0
-    };
-
-    this.observer = new IntersectionObserver(this.handleLoadData.bind(this), options);
-    this.observer.observe(target);
-  };
-
-  handleLoadData(entries, target) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        this.loadData();
-        this.observer.disconnect();
-      }
-    });
+  toggleVisibility() {
+    this.menu.classList.toggle('search__show');
   }
 
   loadData(){
@@ -90,21 +76,6 @@ class PostLoader {
     }
   }
 
-  handleClick(e) {
-
-    if (e.target.postId) {
-      return this.handleRenderPost(e.target.postId);
-    }
-
-    if (
-      e.target.className.includes('article-modal__close') ||
-      e.target.className.includes('article-modal__overlay')
-    ) {
-      return this.closeModal();
-    }
-
-  }
-
   handleFilterUpdate(e) {
     if (e.target.type === 'checkbox') {
 
@@ -120,31 +91,28 @@ class PostLoader {
   handleRenderPost(id) {
 
     if (id === this.postPreviousId) {
-      return this.openModal();
+      return this.toggleVisibility();
     }
 
     const { title, content } = this.posts.find(post => post.id === id);
 
-    this.articleModalTitle.textContent = title;
-    this.articleModalContent.innerHTML = '';
-    this.articleModalContent.insertAdjacentHTML('beforeend', content);
+    this.resultTitle.textContent = title;
+    this.resultContent.innerHTML = '';
+    this.resultContent.insertAdjacentHTML('beforeend', content);
     this.previousId = id;
 
-    this.openModal();
+    // this.openModal();
+    this.toggleVisibility();
   }
 
   openModal() {
-    this.articleModal.classList.add('article-modal--active');
-    this.articleModalClose.classList.add('article-modal__close--active');
-    this.articleModalOverlay.classList.add('article-modal__overlay--active');
-    document.body.classList.add('no-overflow');
+    this.menu.classList.add('search__show');
+    this.searchField.focus();
   }
 
   closeModal() {
-    this.articleModal.classList.remove('article-modal--active');
-    this.articleModalClose.classList.remove('article-modal__close--active');
-    this.articleModalOverlay.classList.remove('article-modal__overlay--active');
-    document.body.classList.remove('no-overflow');
+    this.menu.classList.remove('search__show');
+    this.searchField.blur();
   }
 
   filterPosts() {
@@ -168,18 +136,21 @@ class PostLoader {
       return;
     }
 
-    this.articleList.innerHTML = '';
+    this.searchResults.innerHTML = '';
     posts.forEach(post => {
+      const li = document.createElement('li');
+      li.className = 'search__result';
+      li.postId = post.id;
+
       const article = document.createElement('article');
-      article.className = 'article-list__item';
-      article.postId = post.id;
 
       const h3 = document.createElement('h3');
-      h3.className = 'article-list__title';
+      h3.className = 'result__title';
       h3.innerText = post.title;
 
       article.appendChild(h3);
-      this.articleList.appendChild(article);
+      li.appendChild(article);
+      this.searchResults.appendChild(li);
     });
   }
 }

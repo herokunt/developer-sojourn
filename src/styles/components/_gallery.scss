@@ -2,7 +2,7 @@
   @include contain;
   display: grid;
   grid-template-columns: repeat(3, 1fr) 30rem;
-  grid-template-rows: repeat(3, 20rem);
+  grid-template-rows: repeat(4, 20rem);
   grid-gap: 2rem;
 
   @include responsive(portrait) {

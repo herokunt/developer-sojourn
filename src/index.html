@@ -20,7 +20,6 @@
             <li class="header__item"><a class="header__link" href="#section-about">About</a></li>
             <li class="header__item"><a class="header__link" href="#section-projects">Projects</a></li>
             <li class="header__item"><a class="header__link" href="#section-notes">Blog</a></li>
-  
             <li class="header__item dropdown">
               <svg class="dropdown__icon"><use xlink:href="../assets/images/sprite.svg#icon-colours"></use></svg>
               <nav class="dropdown__content">
@@ -164,15 +163,15 @@
               <span class="tooltip" data-tooltip="WordPress REST API">
                 <svg class="icon"><use xlink:href="../assets/images/sprite.svg#icon-wordpress"></use></svg>
               </span>
-              <span class="tooltip" data-tooltip="Nginx">
+              <!-- <span class="tooltip" data-tooltip="Nginx">
                 <svg class="icon"><use xlink:href="../assets/images/sprite.svg#icon-nginx"></use></svg>
-              </span>
+              </span> -->
               <!-- <span class="tooltip" data-tooltip="IPFS">
                 <svg class="icon"><use xlink:href="../assets/images/sprite.svg#icon-ipfs"></use></svg>
               </span> -->
-              <span class="tooltip" data-tooltip="Linux">
+              <!-- <span class="tooltip" data-tooltip="Linux">
                 <svg class="icon icon--dark-mode"><use xlink:href="../assets/images/sprite.svg#icon-linux"></use></svg>
-              </span>
+              </span> -->
             </div>
           </footer>
         </div>
@@ -192,26 +191,22 @@
 
     <div class="gallery">
 
-      <article class="card card--1">
+      <article class="card card--8">
         <div class="card__side card__side--front-x">
-          <video
-            class="card__video"
-            src="../assets/videos/flowfield.webm"
-            poster="../assets/images/flowfield-thumb.jpeg"
-            preload="none"
-            muted
-            loop>
-          </video>
+          <img
+            class="card__img card__img--fill"
+            src="../assets/images/bytes-and-pipes-2.png"
+          >
         </div>
         <div class="card__side card__side--back-x">
-          <h3 class="card__title">Flowfield</h3>
+          <h3 class="card__title">Bytes And Pipes</h3>
           <ul class="card__social">
-            <li><a href="https://github.com/herokunt/javascript_ramblings/blob/main/2D/noc_flowfield.js">
+            <li><a href="https://github.com/herokunt/javascript_ramblings/blob/main/2D/angry_matter.js">
               <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
               </svg>
             </a></li>
-            <li><a href="https://editor.p5js.org/fall-parameter/sketches/PxvmM0PMq">
+            <li><a href="https://editor.p5js.org/fall-parameter/sketches/Q6PcOhQBl">
               <svg class="card__p5" width=24 height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
                 <path d="M16.909 10.259l8.533-2.576 1.676 5.156-8.498 2.899 5.275 7.48-4.447 3.225-5.553-7.348-5.408 7.155-4.318-3.289 5.275-7.223L.88 12.647l1.678-5.16 8.598 2.771V1.364h5.754v8.895z"/>
               </svg>
@@ -387,60 +382,50 @@
           </ul>
         </div>
       </article>
+
+      <article class="card card--1">
+        <div class="card__side card__side--front-x">
+          <video
+            class="card__video"
+            src="../assets/videos/flowfield.webm"
+            poster="../assets/images/flowfield-thumb.jpeg"
+            preload="none"
+            muted
+            loop>
+          </video>
+        </div>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Flowfield</h3>
+          <ul class="card__social">
+            <li><a href="https://github.com/herokunt/javascript_ramblings/blob/main/2D/noc_flowfield.js">
+              <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a></li>
+            <li><a href="https://editor.p5js.org/fall-parameter/sketches/PxvmM0PMq">
+              <svg class="card__p5" width=24 height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+                <path d="M16.909 10.259l8.533-2.576 1.676 5.156-8.498 2.899 5.275 7.48-4.447 3.225-5.553-7.348-5.408 7.155-4.318-3.289 5.275-7.223L.88 12.647l1.678-5.16 8.598 2.771V1.364h5.754v8.895z"/>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </article>
     </div>
+
+    <button class="btn btn--controller"></button>
+
+    <aside class="gallery-modal">
+      <span class="gallery-modal__close" aria-label="Close gallery modal">&times;</span>
+      <h3 class="gallery-modal__title"></h3>
+      <p class="gallery-modal__content"></p>
+    </aside>
+    <div class="gallery-modal__overlay"></div>
 
     <svg class="section-projects__divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
     </svg>
 
   </section>
-
-  <!-- <section class="section section-notes" id="section-notes">
-
-    <header class="section__headline">
-      <h2 class="section__headline--title">Blog...</h2>
-    </header>
-
-    <form class="search">
-      <input class="search__input" id="search-field" name="search-field" type="text" placeholder="Looking for something?">
-
-      <div class="control-group">
-        <input class="search__filter" type="checkbox" name="html" value="html" id="html">
-        <label class="search__label search__label--html" for="html">HTML</label>
-
-        <input class="search__filter" type="checkbox" name="css" value="css" id="css">
-        <label class="search__label search__label--css" for="css">CSS</label>
-
-        <input class="search__filter" type="checkbox" name="javascript" value="javascript" id="javascript">
-        <label class="search__label search__label--js" for="javascript">JS</label>
-
-        <input class="search__filter" type="checkbox" name="node" value="node" id="node">
-        <label class="search__label search__label--node" for="node">Node.js</label>
-
-        <input class="search__filter" type="checkbox" name="react" value="react" id="react">
-        <label class="search__label search__label--react" for="react">React.js</label>
-
-        <input class="search__filter" type="checkbox" name="python" value="python" id="python">
-        <label class="search__label search__label--py" for="python">Python</label>
-
-        <input class="search__filter" type="checkbox" name="wordpress" value="wordpress" id="wordpress">
-        <label class="search__label search__label--wp" for="wordpress">WordPress</label>
-
-        <input class="search__filter" type="checkbox" name="devops" value="devops" id="devops">
-        <label class="search__label search__label--lx" for="devops">SysAdmin</label>
-      </div>
-    </form>
-
-    <div class="article-list"></div>
-
-    <aside class="article-modal">
-      <span class="article-modal__close" aria-label="Close Article Modal">&times;</span>
-      <h3 class="article-modal__title"></h3>
-      <article class="article-modal__content"></article>
-    </aside>
-    <div class="article-modal__overlay"></div>
-
-  </section> -->
 
   <footer class="footer">
     <div class="row row--vertical-phone">

@@ -1,3 +1,6 @@
+.marginless {
+  margin: 0 !important;
+}
 .small-margin-y {
   margin: 2rem 0;
 }
@@ -29,4 +32,8 @@
 }
 .has-background-glass {
   @include glass-effect;
+}
+.has-background-light {
+  background: none;
+  background-color: $color-light;
 }

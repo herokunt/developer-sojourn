@@ -60,7 +60,8 @@ module.exports = {
     }]
   },
   plugins: [
-    new HTMLWebpackPlugin({ template: './src/index.html' }),
+    new HTMLWebpackPlugin({ filename: 'index.html', template: './src/index.html' }),
+    new HTMLWebpackPlugin({ filename: 'blog.html', template: './src/blog.html' })
   ],
   devtool: 'source-map',
   devServer: {

@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const miniCSSExtractPlugin = require('mini-css-extract-plugin');
@@ -6,6 +7,35 @@ const miniCSSExtractPlugin = require('mini-css-extract-plugin');
 const postcssPlugins = [
   require('autoprefixer')
 ];
+
+class BuildWordPressFiles{
+  apply(compiler){
+    compiler.hooks.done.tap('Link compiled JS and CSS files to custom theme', function(){
+
+      let functionsphp = fs.readFileSync('./src/wp_theme/functions.php', 'utf-8');
+      const jsfiles = new RegExp(/^main\..+\.js/ig);
+      const cssfiles = new RegExp(/main\..+\.css/ig);
+
+      fs.readdirSync('./dist').forEach(file => {
+        if (file.match(jsfiles)) {
+          fs.copyFile(`./dist/${file}`, `./src/wp_theme/js/${file}`, (err) => {
+            if (err) throw err
+          });
+          functionsphp = functionsphp.replace(/main\..+\.js/ig, file);
+        }
+
+        if (file.match(cssfiles)) {
+          fs.copyFile(`./dist/${file}`, `./src/wp_theme/css/${file}`, (err) => {
+            if (err) throw err
+          });
+          functionsphp = functionsphp.replace(cssfiles, file);
+        }
+      });
+
+      fs.writeFileSync('./src/wp_theme/functions.php', functionsphp);
+    });
+  }
+};
 
 module.exports = {
   mode: 'production',
@@ -77,9 +107,11 @@ module.exports = {
     }]
   },
   plugins: [
-    new HTMLWebpackPlugin({ template: './src/index.html' }),
+    new HTMLWebpackPlugin({ filename: 'index.html', template: './src/index.html' }),
+    new HTMLWebpackPlugin({ filename: 'blog.html', template: './src/blog.html' }),
     new miniCSSExtractPlugin({ filename: "[name].[hash].css"}),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new BuildWordPressFiles()
   ],
   optimization: {
     splitChunks: {

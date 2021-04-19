@@ -5,11 +5,13 @@
 
 class LazyLoader {
   constructor() {
-    this.videos  = document.querySelectorAll('.card__video');
+    this.videos = document.querySelectorAll('.card__video');
+    this.controller = document.querySelector('.btn--controller');
+    this.autoplay = true;
+
     this.isMobileDevice = navigator.userAgent.match(
       /(Android|iPhone|iPad|iPod|webOS|Windows Phone|BlackBerry)/i
     );
-
     if (this.isMobileDevice) {
       this.videos.forEach(video => video.src = '');
     } else {
@@ -28,7 +30,15 @@ class LazyLoader {
   }
 
   createObserver() {
-    const target = document.getElementById('section-projects');
+    // const target = document.getElementById('section-projects');
+    const target = document.querySelector('.gallery');
+
+    this.controller.addEventListener('click', () => {
+      this.autoplay = !this.autoplay;
+      this.videos.forEach(video => video.paused
+        ? video.play()
+        : video.pause());
+    });
 
     const options = {
       root: null,
@@ -38,7 +48,16 @@ class LazyLoader {
 
     this.observer = new IntersectionObserver(([entry]) => {
       const moveIntoView = entry.intersectionRatio > 0;
-      this.videos.forEach(video => moveIntoView ? video.play() : video.pause());
+
+      if (moveIntoView) {
+        this.controller.classList.remove('btn--hidden');
+        if (!this.autoplay) return;
+        this.videos.forEach(video => video.play());
+      } else {
+        this.controller.classList.add('btn--hidden');
+        if (!this.autoplay) return;
+        this.videos.forEach(video => video.pause());
+      }
     }, options);
 
     this.observer.observe(target);

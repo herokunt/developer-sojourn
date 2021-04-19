@@ -1,22 +1,22 @@
 import p5         from 'p5';
-import matrix     from './sketches/matrix';
-import circles    from './sketches/circles';
-import snowfall   from './sketches/snowfall';
-import blobby     from './sketches/blobby';
-import flowfield  from './sketches/flowfield';
+// import matrix     from './sketches/matrix';
+// import circles    from './sketches/circles';
+// import snowfall   from './sketches/snowfall';
+// import blobby     from './sketches/blobby';
+// import flowfield  from './sketches/flowfield';
+// import lightbulb    from './sketches/lightbulb';
 import bubbles    from './sketches/bubbles';
-import lightbulb    from './sketches/lightbulb';
 
 const CANVAS_ELEMENT  = 'p5canvas';
 const DEFAULT_SKETCH = bubbles;
 const SKETCH_LIST = {
-  circles,
-  snowfall,
-  blobby,
-  matrix,
-  flowfield,
+  // circles,
+  // snowfall,
+  // blobby,
+  // matrix,
+  // flowfield,
+  // lightbulb,
   bubbles,
-  lightbulb
 };
 
 class CanvasController {

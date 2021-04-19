@@ -7,9 +7,43 @@
 }
 
 .search {
-  @include contain;
+  // @include contain;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-height: 75vh;
+  overflow: auto;
+  padding: 2rem 0;
+  background-color: $color-light;
+  box-shadow: $box-shadow-light;
+  transition: all 0.3s ease;
+  transform: translate(0, -120%);
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    background: none;
+    border: none;
+    font-size: 3rem;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-info;
+    }
+  }
+
+  &__show {
+    transform: translate(0, 0);
+  }
+
+  &__form {
+    @include contain;
+  }
 
   &__input {
+    // display: inline-block;
+    margin: 0 auto;
     position: relative;
     width: 100%;
     padding: 1rem;
@@ -123,6 +157,68 @@
         linear-gradient(to right bottom, $color-light 1%, $color-lx);
       opacity: 0;
       transition: opacity 0.2s;
+    }
+  }
+
+  &__results {
+    @include contain;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    padding-bottom: 2rem;
+
+    @include responsive(phone) {
+      padding: 0 1rem;
+    }
+  }
+
+  &__result {
+    box-decoration-break: clone;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    min-height: 10rem;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.3s;
+    animation: card-come-in .5s forwards;
+    background-image: linear-gradient(to right bottom, coral, transparent);
+    border-radius: $border-radius;
+    border: 1px solid $color-gray-light;
+
+    @media screen and (hover: hover){
+      filter: grayscale(.2);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-gray-light;
+      color: $color-dark;
+    }
+
+    &:hover {
+      border: 1px solid $color-gray-dark;
+      background-color: $color-lighter;
+      transform: translateY(-.1rem);
+      filter: grayscale(0);
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: $box-shadow-light;
+      opacity: 0;
+      transition: opacity 0.3s;
     }
   }
 }

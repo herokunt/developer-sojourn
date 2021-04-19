@@ -8,6 +8,7 @@
 
 @import 'styles/components/article-list';
 @import 'styles/components/article-modal';
+@import 'styles/components/gallery-modal';
 @import 'styles/components/canvas';
 @import 'styles/components/gallery';
 @import 'styles/components/dropdown';
@@ -15,8 +16,11 @@
 @import 'styles/components/card';
 @import 'styles/components/logo';
 @import 'styles/components/icon';
+@import 'styles/components/btn';
 
 @import 'styles/layout/header';
 @import 'styles/layout/section';
 @import 'styles/layout/column';
 @import 'styles/layout/footer';
+
+@import 'styles/pages/blog';

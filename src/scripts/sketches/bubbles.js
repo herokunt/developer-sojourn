@@ -1,7 +1,7 @@
 import p5 from 'p5';
 
 const FRAME_RATE = 24;
-const TOTAL_BUBBLES = 200;
+const TOTAL_BUBBLES = 100;
 
 class Bubble {
   constructor(x, y, m, p){
@@ -13,13 +13,13 @@ class Bubble {
     this.r = p.sqrt(this.mass) * 10;
     this.done = false;
   }
-  
+
   edgeDetection(){
     if (this.pos.y + this.r < 0) {
       this.done = true;
     }
   }
-  
+
   applyForce(force) {
     const f = p5.Vector.div(force, this.mass);
     this.acc.add(f);
@@ -28,32 +28,32 @@ class Bubble {
   applyBuoyancy() {
     this.acc.add(this.p.random(-0.03, 0.03), this.p.random(0,-0.1));
   }
-  
+
   applyDragForce(){
     // Get vector of opposite direction of magnitude 1.
     let drag = this.vel.copy();
     drag.normalize();
     drag.mult(-1);
-    
+
     // Calculate the magnitude of the drag vector.
     const speedSq = this.vel.magSq();
     drag.setMag(0.2 * speedSq);
-    
+
     this.applyForce(drag);
   }
-  
+
   applyFriction(){
     // Get vector of opposite direction of magnitude 1.
     let friction = this.vel.copy();
     friction.normalize();
     friction.mult(-1);
-    
+
     // Calculate the magnitude of the friction vector.
     friction.setMag(0.01 * this.mass);
-    
+
     this.applyForce(friction);
   }
-  
+
   update(){
     this.applyDragForce();
     this.applyBuoyancy();
@@ -63,7 +63,7 @@ class Bubble {
     this.acc.set(0,0);
     this.edgeDetection();
   }
-  
+
   show(){
     this.p.ellipse(this.pos.x, this.pos.y, this.r);
   }
@@ -83,7 +83,7 @@ export default p => {
         p.random(1,10),
         p
       );
-      bubbles.push(bubble);
+      bubbles[i] = bubble;
     }
 
     p.frameRate(FRAME_RATE);
@@ -117,7 +117,7 @@ export default p => {
     canvasDOM = canvas.parent();
     // p.resizeCanvas(canvasDOM.scrollWidth, canvasDOM.scrollHeight);
     p.resizeCanvas(window.innerWidth, window.innerHeight);
-    
+
     p.fill(20, 80, 100, 25);
     p.noStroke();
 

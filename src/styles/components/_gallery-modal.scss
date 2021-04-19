@@ -1,0 +1,103 @@
+.gallery-modal {
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+  max-width: 50vw;
+  height: 100vh;
+  z-index: 999;
+  opacity: 0;
+  transform: translateX(200%);
+  overflow-y: auto;
+  transition: all 0.4s cubic-bezier(1,0,0,1);
+  pointer-events: none;
+
+  padding: 5rem;
+  font-size: 1.7rem;
+  color: $color-dark;
+  background-color: $color-lighter;
+  box-shadow: $box-shadow-light;
+
+  &--active {
+    position: fixed;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(100%);
+
+    @include responsive(landscape) {
+      left: 10rem;
+      right: 10rem;
+      width: 80%;
+      max-width: 80vw;
+      padding: 5rem 10rem;
+      transform: translateX(0);
+    }
+
+    @include responsive(portrait) {
+      padding: 4rem;
+      max-width: 100%;
+    }
+
+    @include responsive(tablet) {
+      left: 0;
+      right: 0;
+      padding: 4rem;
+      width: 100vw;
+    }
+  }
+
+  &__close {
+    position: fixed;
+    font-size: 4rem;
+    right: 3rem;
+    top: 1rem;
+    transition: opacity 1s cubic-bezier(1,0,0,1);
+
+    &--active {
+      opacity: 1;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active,
+      &::selection {
+        color: $color-gray;
+        background: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: PanameraRegular;
+    font-size: 3.5rem;
+    border-bottom: 1px solid $color-gray;
+    margin-bottom: 3rem;
+
+    @include responsive(tablet) {
+      font-size: 3.25rem;
+    }
+    @include responsive(phone) {
+      font-size: 2.75rem;
+    }
+    @include responsive(narrow) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba($color-darker, 0.4);
+    display: none;
+
+    &--active {
+      display: block;
+      opacity: 1;
+      z-index: 100;
+    }
+  }
+}

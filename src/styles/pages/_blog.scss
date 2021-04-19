@@ -1,0 +1,53 @@
+.blog {
+  background: none;
+  background-color: $color-light;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .75rem 0;
+  box-shadow: $box-shadow-light;
+
+  &__title {
+    font-family: PanameraRegular;
+    font-size: 2.6rem;
+  }
+
+  &__search {
+    height: 3rem;
+    width: 3rem;
+
+    &:hover {
+      cursor: pointer;
+      fill: $color-info;
+    }
+  }
+}
+
+.post {
+
+  &__list {
+    @include contain;
+    padding: 2rem;
+  }
+
+  &__item {
+    margin: 2rem 0;
+  }
+
+  &__title {}
+  &__excerpt {}
+  &__date {}
+}
+
+.single {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $color-dark;
+  }
+}
