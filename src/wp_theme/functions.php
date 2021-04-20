@@ -1,6 +1,15 @@
 <?php
 
+add_action('wp_enqueue_scripts', 'load_scripts_and_styles');
 add_action('rest_api_init', 'custom_get_posts');
+
+function load_scripts_and_styles() {
+  /* Loads main JS file */
+  wp_enqueue_scripts('main_js', get_theme_file_uri('main.32b2b67a45fdbb0e2464.js'), NULL, '1.0', true);
+
+  /* Loads main CSS files */
+  wp_enqueue_style('styles_css', get_theme_file_uri('main.871b2282d9ee6bd73fde.css'), NULL, '1.0', true);
+}
 
 // Sets up event a custom endpoint: /content/posts
 function custom_get_posts() {

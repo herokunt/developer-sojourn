@@ -1,0 +1,21 @@
+.projects {
+  @extend %section;
+  background-color: lightgreen;
+
+  &__header {
+    @extend %section-header;
+  }
+
+  &__content {
+    @extend %section-content;
+    gap: 2rem;
+  }
+
+  &__description {
+    align-self: center;
+  }
+
+  &__card {
+    justify-self: center;
+  }
+}

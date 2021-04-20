@@ -1,84 +1,44 @@
 .header {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  margin: auto 0;
-  text-align: center;
-  padding-top: 12rem;
-  contain: content;
+  position: fixed;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  width: 80vw;
+  height: 7.5rem;
+  z-index: 99;
+  background-color: $color-light;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-light;
+  color: $color-dark;
 
-  @include responsive(tablet) {
-    min-height: 90vh;
-  }
-  @include responsive(tablet) {
-    min-height: 80vh;
-  }
   @include responsive(phone) {
-    padding-top: 8rem;
-    min-height: 60vh;
-  }
-
-  &__headline {
-    margin: 2rem 0;
-  }
-
-  &__navigation {}
-
-  &__menu {
-    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transform: translateX(0);
     justify-content: center;
   }
 
-  &__item {
-    padding: .5rem 1rem;
-    margin: 0 2rem;
+  &__title {
+    font-family: PanameraRegular;
+    flex: 1 0 auto;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 2rem;
 
     &:hover {
       cursor: pointer;
     }
 
-    &:hover .header__link {
-      color: $color-dark;
-    }
-  }
-
-  &__link {
-    display: inline-block;
-    color: $color-light;
-    font-family: PanameraRegular;
-    text-shadow: $text-shadow;
-    transition: color 0.1s ease;
-
-    &--menu {}
-  }
-
-  &__link {
-    color: $color-light;
-    font-family: PanameraRegular;
-  }
-
-  &__background {
-    @include glass-effect;
-    display: inline-block;
-    padding: 3rem;
-    border-radius: 3px;
-    min-width: 60%;
-    max-width: 90%;
-    z-index: 2;
-    position: relative;
-  }
-
-  &__divider {
-    position: absolute;
-    bottom: -1px; // quick fix for misplaced svg no firefox
-    left: 0;
-    height: 15rem;
-    width: 100%;
-    transform: rotate(180deg);
-    fill: $color-light;
-
-    @media (prefers-color-scheme: dark) {
-      fill: $color-dark;
+    @include responsive(phone) {
+      display: none;
     }
   }
 }

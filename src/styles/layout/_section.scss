@@ -1,143 +1,33 @@
-.section {
+%section {
   position: relative;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
-  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+}
 
-  @media (prefers-color-scheme: dark) {
-    background-color: $color-dark;
-    padding: 5rem 0;
-  }
+%section-header {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  font-family: PanameraRegular;
+  font-size: 10rem;
+  opacity: .4;
+  pointer-events: none;
+}
 
-  &-about {
-    // overflow-x: clip;
-    content: contain;
-    background-color: $color-light;
+%section-content {
+  @include contain;
+  margin-top: 13.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  padding-top: 5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $color-dark;
-    }
-
-    &__content {
-      @include contain;
-    }
-
-    &__footer {
-      margin-top: 3rem;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      flex-grow: 1;
-    }
-
-    &__icons {
-      display: grid;
-      grid-gap: 1rem;
-      grid-template-columns: repeat(auto-fit, 3.2rem);
-      justify-content: center;
-
-      &--contact {
-        justify-content: center;
-        gap: 3rem;
-
-        @include responsive(tablet) {
-          justify-content: space-around;
-          gap: unset;
-        }
-      }
-    }
-
-    .tooltip {
-      position: relative;
-
-      &:hover::before {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      &::before {
-        content: attr(data-tooltip);
-        position: absolute;
-        top: 110%;
-        left: 0;
-        padding: .5rem;
-        border-radius: $border-radius;
-        background-color: $color-dark;
-        color: $color-light;
-        transform: scale(0);
-        opacity: 0;
-        transition: transform 0.2s opacity 0.3s;
-      }
-
-      &--right {
-        position: relative;
-
-        &::before {
-          content: attr(data-tooltip);
-          position: absolute;
-          top: 110%;
-          left: -100%;
-          padding: .5rem;
-          border-radius: $border-radius;
-          background-color: $color-dark;
-          color: $color-light;
-          transform: scale(0);
-          opacity: 0;
-          transition: transform 0.2s opacity 0.3s;
-        }
-      }
-    }
-
-    &__divider {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      height: 19rem;
-      // width: 300%;
-      transform: rotate(180deg);
-      fill: $color-light;
-      z-index: 1;
-
-      @media (prefers-color-scheme: dark) {
-        display: none;
-      }
-    }
-  }
-
-  &-projects {
-    padding-bottom: 15rem;
-    padding-top: 15rem;
-
-    @media (prefers-color-scheme: dark) {
-      padding-bottom: 10rem;
-    }
-
-    @include responsive(tablet) {
-      padding-bottom: 15rem;
-    }
-
-    &__divider {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 20rem;
-      width: 100%;
-      transform: rotateX(180deg);
-      fill: $color-dark;
-
-      @media (prefers-color-scheme: dark) {
-        display: none;
-      }
-    }
-  }
-
-  &-notes {
-    background-color: $color-light;
-    padding: 5rem 0 10rem 0;
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $color-dark;
-    }
+  @include responsive(phone) {
+    grid-template-columns: 1fr;
   }
 }

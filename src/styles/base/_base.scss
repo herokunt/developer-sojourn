@@ -20,7 +20,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   color: $color-dark;
-  background-image: $background-gradient;
+  // background-image: $background-gradient;
   // background-size: 900%;
   // background-position: left;
   // transition: background-position 9s;
@@ -48,4 +48,8 @@ a {
 
 li {
   list-style: none;
+}
+
+p {
+  white-space: pre-line;
 }

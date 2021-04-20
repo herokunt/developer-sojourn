@@ -1,0 +1,25 @@
+.landing {
+  @extend %section;
+  background-color: lightblue;
+
+  &__header {
+    @extend %section-header;
+  }
+
+  &__content {
+    @extend %section-content;
+  }
+
+  &__roadmap {
+    justify-self: center;
+  }
+
+  &__roadmap-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  &__roadmap-item {
+    margin: 2rem;
+  }
+}

@@ -1,5 +1,14 @@
 const path = require('path');
+const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+
+const HTMLPages = fs.readdirSync('./src')
+  .filter(file => file.endsWith('.html'))
+  .map(page => new HTMLWebpackPlugin({
+    title: page === 'blog.html' ? 'Developer Sojourn | Blog' : 'Developer Sojourn',
+    filename: page,
+    template: `./src/${page}`
+  }));
 
 module.exports = {
   mode: 'development',
@@ -59,9 +68,7 @@ module.exports = {
       }
     }]
   },
-  plugins: [
-    new HTMLWebpackPlugin({ template: './src/index.html' }),
-  ],
+  plugins: HTMLPages,
   devtool: 'source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),

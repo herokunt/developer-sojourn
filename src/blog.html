@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Sojourn</title>
+</head>
+  <body>
+    <section class="section section-notes" id="section-notes">
+
+      <header class="section__headline">
+        <h2 class="section__headline--title">Blog</h2>
+      </header>
+
+      <form class="search">
+        <input class="search__input" id="search-field" name="search-field" type="text" placeholder="Looking for something?">
+
+        <div class="control-group">
+          <input class="search__filter" type="checkbox" name="html" value="html" id="html">
+          <label class="search__label search__label--html" for="html">HTML</label>
+
+          <input class="search__filter" type="checkbox" name="css" value="css" id="css">
+          <label class="search__label search__label--css" for="css">CSS</label>
+
+          <input class="search__filter" type="checkbox" name="javascript" value="javascript" id="javascript">
+          <label class="search__label search__label--js" for="javascript">JS</label>
+
+          <input class="search__filter" type="checkbox" name="node" value="node" id="node">
+          <label class="search__label search__label--node" for="node">Node.js</label>
+
+          <input class="search__filter" type="checkbox" name="react" value="react" id="react">
+          <label class="search__label search__label--react" for="react">React.js</label>
+
+          <input class="search__filter" type="checkbox" name="python" value="python" id="python">
+          <label class="search__label search__label--py" for="python">Python</label>
+
+          <input class="search__filter" type="checkbox" name="wordpress" value="wordpress" id="wordpress">
+          <label class="search__label search__label--wp" for="wordpress">WordPress</label>
+
+          <input class="search__filter" type="checkbox" name="devops" value="devops" id="devops">
+          <label class="search__label search__label--lx" for="devops">SysAdmin</label>
+        </div>
+      </form>
+
+      <div class="article-list"></div>
+
+    </section>
+
+    <footer class="footer">
+      <div class="row row--vertical-phone">
+        <div class="column column--quarter contain">
+          <header class="footer__heading">
+            <h3 class="content-title is-centered">Developer Sojourn</h3>
+            <picture class="footer__logo-container">
+              <img class="footer__logo" src="../assets/images/dev.svg" alt="Logo">
+            </picture>
+            <div class="copyleft">
+              <a class="copyleft__text" href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>
+              <svg class="copyleft__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 980">
+                <circle cx="490" cy="490" r="440" fill="none" stroke-width="100"/>
+                <path d="M219,428H350a150,150 0 1 1 0,125H219a275,275 0 1 0 0-125z"/>
+              </svg>
+              2021
+            </div>
+          </header>
+        </div>
+
+        <div class="column column--third contain">
+          <h3 class="content-title is-centered small-margin-y">Get In Touch</h3>
+          <p>Thanks for visiting!&nbsp;If you'd like to know more about me or this site please don't hesitate to contact me and visit my GitHub page.</p>
+          <ul class="footer__icons">
+            <li>
+              <a class="tooltip tooltip--right" data-tooltip="GitHub" href="https://github.com/herokunt">
+                <svg class="icon icon--light-mode"><use xlink:href="../assets/images/sprite.svg#icon-github"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a class="tooltip tooltip--right" data-tooltip="devsojourn@pm.me" href="mailto:devsojourn@pm.me">
+                <svg class="icon icon--light-mode"><use xlink:href="../assets/images/sprite.svg#icon-envelope"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a class="tooltip tooltip--right" data-tooltip="PGP&nbsp;Key" href="publickey.devsojourn@pm.me.asc" download>
+                <svg class="icon icon--light-mode"><use xlink:href="../assets/images/sprite.svg#icon-key1"></use></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
