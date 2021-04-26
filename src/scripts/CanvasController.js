@@ -20,7 +20,7 @@ const SKETCH_LIST = {
 class CanvasController {
   constructor() {
     this.current  = new p5(DEFAULT_SKETCH, CANVAS_ELEMENT);
-    this.observer = this.createObserver();
+    // this.observer = this.createObserver();tessst
     // this.listen();
   };
 

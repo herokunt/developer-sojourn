@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth;
   font-size: 62.5%; // desktop-first
   @include responsive(portrait)   { font-size: 56.25%; }
-  @include responsive(narrow)      { font-size: 50%;    }
+  @include responsive(narrow)     { font-size: 50%;    }
   @include responsive(widescreen) { font-size: 75%;    }
 }
 
@@ -20,7 +20,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   color: $color-dark;
-  // background-image: $background-gradient;
+  background-image: $background-gradient;
   // background-size: 900%;
   // background-position: left;
   // transition: background-position 9s;
@@ -30,6 +30,7 @@ body {
 
   @media (prefers-color-scheme: dark) {
     color: $color-light;
+    background-image: $background-gradient-dark;
   }
 
   @media (prefers-reduced-motion) {

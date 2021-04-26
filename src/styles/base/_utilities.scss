@@ -27,6 +27,9 @@
 .contain {
   @include contain;
 }
+.invisible {
+  visibility: hidden;
+}
 .z-10 {
   z-index: 10;
 }

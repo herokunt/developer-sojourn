@@ -1,15 +1,18 @@
 import p5 from 'p5';
 
-const FRAME_RATE = 24;
-const TOTAL_BUBBLES = 100;
+const FRAME_RATE = 20;
+const TOTAL_BUBBLES = 40;
 
 class Bubble {
-  constructor(x, y, m, p){
+  constructor(x, y, m, i, p){
     this.pos = p.createVector(x, y);
     this.acc = p.createVector(0, 0);
     this.vel = p.createVector(0, 0);
-    this.p = p;
     this.mass = m;
+    this.img = i.i;
+    this.ix = i.x;
+    this.iy = i.y;
+    this.p = p;
     this.r = p.sqrt(this.mass) * 10;
     this.done = false;
   }
@@ -65,7 +68,8 @@ class Bubble {
   }
 
   show(){
-    this.p.ellipse(this.pos.x, this.pos.y, this.r);
+    // this.p.ellipse(this.pos.x, this.pos.y, this.r);
+    this.p.image(this.img, this.pos.x, this.pos.y, 32, 32, this.ix, this.iy, 32, 32);
   }
 }
 
@@ -73,7 +77,23 @@ export default p => {
 
   let bubbles = [];
   let canvasDOM;
+  let images;
   let timer;
+
+  const randomImage = () => {
+    const randomRow = Math.floor(p.random(6));
+    let randomCol = Math.floor(p.random(16));
+
+    while (randomRow === 5 && randomCol > 5) {
+      randomCol = Math.floor(p.random(16));
+    }
+
+    return {
+      i: images,
+      x: (randomCol * 32) + (randomCol * 16),
+      y: (randomRow * 32) + (randomRow * 16),
+    };
+  };
 
   const initialSetup = () => {
     for (let i = 0; i < TOTAL_BUBBLES; i++){
@@ -81,7 +101,8 @@ export default p => {
         p.random(0, p.width),
         p.random(0, p.height + 100),
         p.random(1,10),
-        p
+        randomImage(),
+        p,
       );
       bubbles.push(bubble);
     }
@@ -112,6 +133,10 @@ export default p => {
     }, 100);
   };
 
+  p.preload = () => {
+    images = p.loadImage('sprite.png');
+  };
+
   p.setup = () => {
     const canvas = p.createCanvas(100, 100);
     canvasDOM = canvas.parent();
@@ -130,7 +155,7 @@ export default p => {
       bubble.update();
       bubble.show();
       return bubble.done
-        ? new Bubble(p.random(0, p.width), p.height + 10, p.random(1,10), p)
+        ? new Bubble(p.random(0, p.width), p.height + 10, p.random(1,10), randomImage(), p)
         : bubble;
     });
   };

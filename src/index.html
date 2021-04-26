@@ -7,31 +7,30 @@
 </head>
 
 <body id="p5canvas">
-  <header class="header">
-    <h1 class="header__title">Developer Sojourn</h1>
-    <ul class="header__icons">
-      <li class="tooltip tooltip--right" data-tooltip="GitHub">
-        <a href="https://github.com/herokunt">
-          <svg class="icon"><use xlink:href="../assets/images/sprite.svg#icon-github"></use></svg>
-        </a>
-      </li>
-      <li class="tooltip tooltip--right" data-tooltip="devsojourn@pm.me">
-        <a href="mailto:devsojourn@pm.me">
-          <svg class="icon"><use xlink:href="../assets/images/sprite.svg#icon-envelope"></use></svg>
-        </a>
-      </li>
-      <li class="tooltip tooltip--right" data-tooltip="PGP&nbsp;Key">
-        <a href="publickey.devsojourn@pm.me.asc" download>
-          <svg class="icon"><use xlink:href="../assets/images/sprite.svg#icon-key1"></use></svg>
-        </a>
-      </li>
-    </ul>
-  </header>
 
-  <section class="landing">
-    <h2 class="landing__header">
-      About...
-    </h2>
+  <aside class="section-title" id="banner"></aside>
+
+  <h1 class="header">Developer Sojourn</h1>
+
+  <nav class="nav" id="nav">
+    <ul class="nav__menu" id="nav__menu">
+      <li class="nav__item"><a href="#about">About</a></li>
+      <li class="nav__item dropdown">
+        Projects
+        <ul class="dropdown__content">
+          <li class="dropdown__item"><a class="dropdown__link" href="#webapps">Web Apps</a></li>
+          <li class="dropdown__item"><a class="dropdown__link" href="#gamesgraphics">Games & Graphics</a></li>
+          <li class="dropdown__item"><a class="dropdown__link" href="#scripts">Scripts</a></li>
+          <li class="dropdown__item"><a class="dropdown__link" href="#sysadmin">SysAdmin</a></li>
+          <li class="dropdown__item"><a class="dropdown__link" href="#blog">Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav__item"><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="landing" id="about">
+    <h2 class="landing__header invisible"></h2>
 
     <div class="landing__content">
       <p class="landing__description">Hi! I'm a web developer based in Madrid, Spain.
@@ -45,30 +44,192 @@
         <p class="landing__roadmap-title">Currently working on:</p>
         <li class="landing__roadmap-item">2D & 3D Graphics</li>
         <li class="landing__roadmap-item">Data Visualization</li>
+        <li class="landing__roadmap-item">Progressive Web Apps</li>
         <li class="landing__roadmap-item">Web Streams</li>
       </ul>
 
     </div>
   </section>
 
-  <section class="projects">
-    <h2 class="projects__header">
-      Web Apps...
-    </h2>
+  <section class="projects" id="webapps">
+    <h2 class="projects__header invisible"></h2>
 
     <div class="projects__content">
       <p class="projects__description">Share files privately and securely, over the browser.
 
-      Bytes And Pipes is a web application that allows to share large files very easily using only a web browser. Files are protected using end-to-end encryption during upload, which means its contents remain unknown to the server and potential eavesdroppers.
+      Bytes And Pipes is a web application to share large files easily from any device using only a web browser. Files are protected using end-to-end encryption, which means its contents remain unknown to the server and potential eavesdroppers, and expire after they're downloaded or after 24 hours.
 
-      Uploaded files expire in 24 hours or after they've been downloaded, and are automatically deleted afterwards.
+      Built using the MERN stack.
       </p>
 
       <article class="projects__card card">
         <div class="card__side card__side--front-x">
           <img
             class="card__img"
-            src="../assets/images/bytesandpipes.png"
+            src="../assets/images/bytes-and-pipes-480.jpeg"
+          >
+        </div>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Bytes And Pipes</h3>
+          <ul class="card__social">
+            <li><a href="https://github.com/herokunt/bytes-and-pipes">
+              <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a></li>
+            <li><a href="https://editor.p5js.org/fall-parameter/sketches/Q6PcOhQBl">
+              <svg class="card__p5" width=24 height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+                <path d="M16.909 10.259l8.533-2.576 1.676 5.156-8.498 2.899 5.275 7.48-4.447 3.225-5.553-7.348-5.408 7.155-4.318-3.289 5.275-7.223L.88 12.647l1.678-5.16 8.598 2.771V1.364h5.754v8.895z"/>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="projects" id="gamesgraphics">
+    <h2 class="projects__header invisible"></h2>
+
+    <div class="projects__content">
+      <p class="projects__description">Ray casting algorithms are used in computer graphics to create 3D representations out of 2D images. This demo written in C follows the steps made popular by Wolfenstein 3D to build a simple engine capable of drawing walls, render textures and sprites.
+
+      Link to a web-based demo is written in JavaScript.</p>
+      <article class="card">
+        <div class="card__side card__side--front-x">
+          <video
+            class="card__video card__video--fill"
+            src="../assets/videos/raycasting.webm"
+            poster="../assets/images/raycasting-thumb.jpeg"
+            preload="none"
+            muted
+            loop>
+          </video>
+        </div>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Raycasting 3D rendering</h3>
+          <ul class="card__social">
+            <li><a href="https://github.com/herokunt/raycasting">
+              <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a></li>
+            <li><a href="https://editor.p5js.org/fall-parameter/sketches/lDJjXSG6o">
+              <svg class="card__p5" width=24 height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+                <path d="M16.909 10.259l8.533-2.576 1.676 5.156-8.498 2.899 5.275 7.48-4.447 3.225-5.553-7.348-5.408 7.155-4.318-3.289 5.275-7.223L.88 12.647l1.678-5.16 8.598 2.771V1.364h5.754v8.895z"/>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects__content">
+      <article class="card">
+        <div class="card__side card__side--front-x">
+          <video
+            class="card__video card__video--fill"
+            src="../assets/videos/steering-behavior.webm"
+            poster="../assets/images/steering-behavior-thumb.jpeg"
+            preload="none"
+            muted
+            loop>
+          </video>
+        </div>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Particle Steering Behaviors</h3>
+          <ul class="card__social">
+            <li><a href="https://github.com/herokunt/javascript_ramblings/blob/main/2D/steering_behavior.js">
+              <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a></li>
+            <li><a href="https://editor.p5js.org/fall-parameter/sketches/Po7qTPFag">
+              <svg class="card__p5" width=24 height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+                <path d="M16.909 10.259l8.533-2.576 1.676 5.156-8.498 2.899 5.275 7.48-4.447 3.225-5.553-7.348-5.408 7.155-4.318-3.289 5.275-7.223L.88 12.647l1.678-5.16 8.598 2.771V1.364h5.754v8.895z"/>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </article>
+      <p class="projects__description">Steering behaviors algorithms are used to provide autonomous agents with realistic behavior that reacts to surrounding forces. They are simple to understand and effective in creating interesting movement patterns.
+
+      This demo was inspired by Daniel Shiffman to represent text that reacts to mouse movement.</p>
+    </div>
+
+  </section>
+
+  <section class="projects" id="scripts">
+    <h2 class="projects__header invisible"></h2>
+
+    <div class="projects__content">
+      <p class="projects__description">Images make the bulk of the modern web and is crucial to optimize them to reduce bandwidth costs and computing processing. This script can convert images to different formats, create different sized copies for desktop and mobile use, and compress them to convenient archives that are easy to upload to the cloud.
+
+      Written in Python, can handle hundreds of images efficiently.</p>
+      <article class="card">
+        <div class="card__side card__side--front-x">
+          <video
+            class="card__video card__video--fill"
+            src="../assets/videos/resizer.webm"
+            poster="../assets/images/raycasting-thumb.jpeg"
+            preload="none"
+            muted
+            loop>
+          </video>
+        </div>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Image Batch Resizer</h3>
+          <ul class="card__social">
+            <li><a href="https://github.com/herokunt/python-scripts/blob/main/batch-resizer.py">
+              <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects__content">
+      <article class="card">
+        <div class="card__side card__side--front-x">
+          <video
+            class="card__video card__video--fill"
+            src="../assets/videos/passwords.webm"
+            poster="../assets/images/steering-behavior-thumb.jpeg"
+            preload="none"
+            muted
+            loop>
+          </video>
+        </div>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Password Checker</h3>
+          <ul class="card__social">
+            <li><a href="https://github.com/herokunt/python-scripts/blob/main/password_checker.py">
+              <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </article>
+      <p class="projects__description">Check your passwords against the popular "Have I Been Pwned?" website and find out if they've been leaked in any of the increasingly common data breaches. Seriously, start using better passwords!
+
+      You can provide passwords inline or through a CSV file, ideal if your password manager (such as KeePassXC) supports exporting data in CSV format. Your passwords will remain secured as only a computed hash is ever sent, as per the Have I Been Pwned API requires.</p>
+    </div>
+  </section>
+
+  <section class="projects" id="sysadmin">
+    <h2 class="projects__header invisible"></h2>
+
+    <div class="projects__content">
+      <p class="projects__description">Installed, configured and manage this site using the LEMP stack.</p>
+
+      <article class="projects__card card">
+        <div class="card__side card__side--front-x">
+          <img
+            class="card__img"
+            src="../assets/images/server.png"
           >
         </div>
         <div class="card__side card__side--back-x">
@@ -90,34 +251,28 @@
     </div>
   </section>
 
-  <section class="projects">
-    <h2 class="projects__header">
-      Games & Graphics...
-    </h2>
+  <section class="projects" id="blog">
+    <h2 class="projects__header invisible"></h2>
 
     <div class="projects__content">
-      <p class="projects__description">An all-time 8-bit classic, Tetris!</p>
+      <p class="projects__description">Installed, configured and manage this site using the LEMP stack.</p>
 
-      <article class="projects__card card card--y">
-        <div class="card__side card__side--front-y">
-          <video
-            class="card__video card__video--fill"
-            src="../assets/videos/tetris.webm"
-            poster="../assets/images/tetris-thumb.png"
-            preload="none"
-            muted
-            loop>
-          </video>
+      <article class="projects__card card">
+        <div class="card__side card__side--front-x">
+          <img
+            class="card__img"
+            src="../assets/images/server.png"
+          >
         </div>
-        <div class="card__side card__side--back-y">
-          <h3 class="card__title">Tetris</h3>
+        <div class="card__side card__side--back-x">
+          <h3 class="card__title">Bytes And Pipes</h3>
           <ul class="card__social">
-            <li><a href="https://github.com/herokunt/javascript_ramblings/blob/main/2D/tetris.js">
+            <li><a href="https://github.com/herokunt/javascript_ramblings/blob/main/2D/angry_matter.js">
               <svg class="card__gh" width=24 height=24 viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
               </svg>
             </a></li>
-            <li><a href="https://editor.p5js.org/fall-parameter/sketches/-8YjzbeP0">
+            <li><a href="https://editor.p5js.org/fall-parameter/sketches/Q6PcOhQBl">
               <svg class="card__p5" width=24 height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
                 <path d="M16.909 10.259l8.533-2.576 1.676 5.156-8.498 2.899 5.275 7.48-4.447 3.225-5.553-7.348-5.408 7.155-4.318-3.289 5.275-7.223L.88 12.647l1.678-5.16 8.598 2.771V1.364h5.754v8.895z"/>
               </svg>
@@ -128,7 +283,7 @@
     </div>
   </section>
 
-  <!-- <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="row row--vertical-phone">
       <div class="column column--quarter contain">
         <header class="footer__heading">
@@ -169,6 +324,6 @@
         </ul>
       </div>
     </div>
-  </footer> -->
+  </footer>
 </body>
 </html>

@@ -1,9 +1,9 @@
 .dropdown {
   position: relative;
 
-  @media only screen and (hover: none){
-    display: none;
-  }
+  // @media only screen and (hover: none){
+  //   display: none;
+  // }
 
   &:hover &__content {
     opacity: 1;
@@ -15,75 +15,41 @@
   }
 
   &__content {
-    @include glass-effect;
     position: absolute;
-    top: 0%;
-    left: 100%;
+    top: 2.5rem;
+    left: 1rem;
+    width: 16rem;
     opacity: 0;
     display: flex;
     flex-direction: column;
     pointer-events: none;
+    background-color: $color-light;
     border-radius: $border-radius;
+    box-shadow: $box-shadow-light;
     transition: opacity 0.2s;
-    cursor: default;
-    padding: 0.5rem;
-
-    @include responsive(tablet) {
-      top: 3rem;
-      left: 0;
-    }
+    padding: 0.5rem 0;
   }
 
   &__menu {
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   &__item {
     margin: 0.5rem 0;
-    padding: 0 .5rem;
+    padding: 1rem;
+
+    // &:hover {
+    //   background-color: $color-gray-light;
+    // }
   }
 
-  &__icon {
-    width: 3.2rem;
-    height: 3.2rem;
-    fill: $color-light;
-    transition: transform 0.2s;
-    backface-visibility: hidden;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &__btn {
-    font-size: 1.6rem;
-    font-family: PanameraRegular;
-    color: $color-light;
-    background: none;
-    border: none;
+  &__link {
     display: inline-block;
-
-    @media (prefers-color-scheme: dark) {
-      color: $color-dark;
-    }
+    border-bottom: 2px solid transparent;
 
     &:hover {
       cursor: pointer;
-      color: $color-dark;
-
-      @media (prefers-color-scheme: dark) {
-        color: $color-light;
-      }
-    }
-
-    &--active,
-    &--paused {
-      color: $color-dark;
-      position: relative;
-
-      @media (prefers-color-scheme: dark) {
-        color: $color-light;
-      }
+      border-bottom: 2px solid $color-darker;
     }
   }
 }

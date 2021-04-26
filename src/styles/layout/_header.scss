@@ -1,31 +1,22 @@
 .header {
-  position: fixed;
+  @include contain;
+  position: absolute;
   top: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  left: 10vw;
   padding: 0 2rem;
-  width: 80vw;
-  height: 7.5rem;
-  z-index: 99;
-  background-color: $color-light;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow-light;
+  // width: 80vw;
+  height: 6rem;
   color: $color-dark;
+  font-family: PanameraRegular;
+  z-index: 100;
 
   @include responsive(phone) {
-    top: 0;
     left: 0;
     width: 100vw;
-    transform: translateX(0);
-    justify-content: center;
+    // text-align: center;
   }
 
   &__title {
-    font-family: PanameraRegular;
     flex: 1 0 auto;
   }
 

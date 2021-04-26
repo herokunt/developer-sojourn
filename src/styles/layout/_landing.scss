@@ -1,6 +1,9 @@
 .landing {
   @extend %section;
-  background-color: lightblue;
+
+  @include responsive(phone) {
+    margin-top: 5rem;
+  }
 
   &__header {
     @extend %section-header;
@@ -10,8 +13,17 @@
     @extend %section-content;
   }
 
+  &__description {
+    @extend %section-description;
+  }
+
   &__roadmap {
+    @include glass-effect;
+    height: 100%;
     justify-self: center;
+    text-align: center;
+    border-radius: $border-radius;
+    padding: 4rem;
   }
 
   &__roadmap-title {
@@ -20,6 +32,8 @@
   }
 
   &__roadmap-item {
-    margin: 2rem;
+    position: relative;
+    margin: 2rem 0;
+    text-align: left;
   }
 }

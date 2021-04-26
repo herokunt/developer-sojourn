@@ -1,6 +1,5 @@
 .projects {
   @extend %section;
-  background-color: lightgreen;
 
   &__header {
     @extend %section-header;
@@ -8,11 +7,12 @@
 
   &__content {
     @extend %section-content;
+    // margin-top: -3rem;
     gap: 2rem;
   }
 
   &__description {
-    align-self: center;
+    @extend %section-description;
   }
 
   &__card {

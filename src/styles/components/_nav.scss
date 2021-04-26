@@ -1,0 +1,95 @@
+.nav {
+  position: fixed;
+  top: 3rem;
+  right: 10vw;
+  width: 80vw;
+  padding: 1rem 2rem;
+  background-color: $color-light;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  z-index: 99;
+  transition: width .4s, right .4s;
+
+  @include responsive(phone) {
+    right: 100vw;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $color-dark;
+  }
+
+  &--hide {
+    right: 3vw;
+    width: 4.2vw;
+    border-radius: 50%;
+    transition:
+      width 0.8s cubic-bezier(1,0,0,1),
+      right 0.4s,
+      border-radius 0.4s 0.6s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include responsive(phone) {
+      width: 5rem;
+      height: 5rem;
+      right: 4vw;
+    }
+
+    &:before {
+      content: '+';
+      font-size: 3rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-45%, -50%);
+      opacity: 0;
+      animation: small-navbar .2s 1s forwards;
+
+      @include responsive(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &--small {
+    right: 3vw;
+    width: 23vw;
+
+    @include responsive(phone) {
+      right: 10vw;
+      width: 80vw;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    // justify-content: space-evenly;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem;
+    transition: transform .4s, opacity .2s;
+
+    @include responsive(phone) {
+      justify-content: center;
+    }
+
+    &--hide {
+      visibility: none;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+  }
+
+  &__item {
+    margin: 0 2rem;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid $color-darker;
+    }
+  }
+}

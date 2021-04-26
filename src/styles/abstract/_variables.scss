@@ -16,17 +16,16 @@ $color-gray-dark: #7f8c8d;
 
 $background-gradient: linear-gradient(
   120deg,
-  // #f9eed2, // new color
-  #95d7f1, // original
-  // #89caf0,
-  // #83bcee,
-  // #7bb2f1,
-  // #79a8f2,
-  // #7c9cf2,
-  // #7b92f9,
-  // #8086fd,
-  #8a78ff, // original
-  #c8553a // new color
+  #95d7f1,
+  #8a78ff,
+  #c8553a
+);
+
+$background-gradient-dark: linear-gradient(
+  120deg,
+  #2C5364,
+  #203A43,
+  #0F2027
 );
 
 $color-html: #e34f26;
